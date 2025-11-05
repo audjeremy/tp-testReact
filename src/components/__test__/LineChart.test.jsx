@@ -21,7 +21,7 @@ describe('LineChart (composant React)', () => {
       expect(screen.getByTestId('nivo-line')).toBeInTheDocument()
     })
   })
-// Test additionnel pour vérifier le re-render avec changement de prop (pouvoir le redessiner sans crash)
+// Test additionnel pour vérifier le re-render avec changement de prop 
   it('supporte la prop isDashboard (re-render sans crash)', async () => {
     const { rerender } = renderWithTheme(<LineChart isDashboard />)
 
