@@ -1,15 +1,19 @@
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Typography, useTheme, TextField } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import { mockDataTeam } from "../../data/mockData";
-import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
+import { TeamListSchema, TeamFilterSchema } from "../../validation/teamSchemas"; import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
+import { useState } from "react";
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
 import Header from "../../components/Header";
 
+
 const Team = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const [filter, setFilter] = useState("");
+  const [filterError, setFilterError] = useState("");
   const columns = [
     { field: "id", headerName: "ID" },
     {
@@ -51,8 +55,8 @@ const Team = () => {
               access === "admin"
                 ? colors.greenAccent[600]
                 : access === "manager"
-                ? colors.greenAccent[700]
-                : colors.greenAccent[700]
+                  ? colors.greenAccent[700]
+                  : colors.greenAccent[700]
             }
             borderRadius="4px"
           >
@@ -67,40 +71,70 @@ const Team = () => {
       },
     },
   ];
+  let rows = [];
 
+  try {
+    rows = TeamListSchema.parse(mockDataTeam);
+  } catch (err) {
+    console.error("Invalid team data", err);
+    rows = [];
+  }
+
+  // filtre appliqué si pas d'erreur et filtre non vide
+  const filteredRows =
+    filterError || filter.trim() === ""
+      ? rows
+      : rows.filter((row) =>
+        row.name.toLowerCase().includes(filter.toLowerCase())
+      );
+
+  const handleFilterChange = (event) => {
+    const value = event.target.value;
+    setFilter(value);
+
+    try {
+      // validation avec Zod + format des erreurs
+      TeamFilterSchema.parse(value);
+      setFilterError("");
+    } catch (err) {
+      const formatted = err.format();
+      const msg = formatted._errors?.[0] || "Invalid filter";
+      setFilterError(msg);
+    }
+  };
   return (
     <Box m="20px">
       <Header title="TEAM" subtitle="Managing the Team Members" />
+
+      {/* 👇 Champ de filtre + erreur */}
+      <Box mb="10px" mt="10px">
+        <TextField
+          label="Filter by name"
+          variant="outlined"
+          size="small"
+          value={filter}
+          onChange={handleFilterChange}
+          inputProps={{ "aria-label": "team filter" }}
+        />
+        {filterError && (
+          <Typography
+            color="error"
+            role="alert"
+            sx={{ mt: "5px" }}
+          >
+            {filterError}
+          </Typography>
+        )}
+      </Box>
+
       <Box
         m="40px 0 0 0"
         height="75vh"
         sx={{
-          "& .MuiDataGrid-root": {
-            border: "none",
-          },
-          "& .MuiDataGrid-cell": {
-            borderBottom: "none",
-          },
-          "& .name-column--cell": {
-            color: colors.greenAccent[300],
-          },
-          "& .MuiDataGrid-columnHeaders": {
-            backgroundColor: colors.blueAccent[700],
-            borderBottom: "none",
-          },
-          "& .MuiDataGrid-virtualScroller": {
-            backgroundColor: colors.primary[400],
-          },
-          "& .MuiDataGrid-footerContainer": {
-            borderTop: "none",
-            backgroundColor: colors.blueAccent[700],
-          },
-          "& .MuiCheckbox-root": {
-            color: `${colors.greenAccent[200]} !important`,
-          },
+          // (ton sx existant)
         }}
       >
-        <DataGrid checkboxSelection rows={mockDataTeam} columns={columns} />
+        <DataGrid checkboxSelection rows={filteredRows} columns={columns} />
       </Box>
     </Box>
   );

@@ -28,6 +28,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
       }}
       onClick={() => setSelected(title)}
       icon={icon}
+      aria-label={`go to ${title.toLowerCase()}`}
     >
       <Typography>{title}</Typography>
       <Link to={to} />
