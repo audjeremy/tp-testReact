@@ -59,7 +59,8 @@ const SidebarSection = ({ title, items, colors, selected, setSelected }) => (
   </>
 );
 
-const buildMenuSections = (colors) => [
+// Optimisation Lighthouse (Phase 2) : menu statique hoisté pour éviter du JS recréé à chaque rendu
+const menuSections = [
   {
     key: "dashboard",
     items: [
@@ -203,6 +204,8 @@ const Sidebar = () => {
                   width="100px"
                   height="100px"
                   src={`../../assets/user.png`}
+                  loading="lazy"
+                  // Optimisation Lighthouse : image non critique chargée en lazy
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>
@@ -223,7 +226,7 @@ const Sidebar = () => {
           )}
 
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
-            {buildMenuSections(colors).map((section) => (
+            {menuSections.map((section) => (
               <SidebarSection
                 key={section.key}
                 title={section.title}

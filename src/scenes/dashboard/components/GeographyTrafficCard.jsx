@@ -1,5 +1,21 @@
+import { lazy, Suspense } from "react";
 import { Box, Typography } from "@mui/material";
-import GeographyChart from "../../../components/GeographyChart";
+
+// Optimisation Lighthouse (Phase 2) : lazy-load du chart pour décaler le coût JS
+const GeographyChart = lazy(() => import("../../../components/GeographyChart"));
+
+const ChartFallback = ({ colors }) => (
+  <Box
+    height="100%"
+    width="100%"
+    display="flex"
+    alignItems="center"
+    justifyContent="center"
+    color={colors.grey[200]}
+  >
+    <Typography variant="body2">Loading map...</Typography>
+  </Box>
+);
 
 const GeographyTrafficCard = ({ colors }) => (
   <Box
@@ -12,7 +28,9 @@ const GeographyTrafficCard = ({ colors }) => (
       Geography Based Traffic
     </Typography>
     <Box height="200px">
-      <GeographyChart isDashboard />
+      <Suspense fallback={<ChartFallback colors={colors} />}>
+        <GeographyChart isDashboard />
+      </Suspense>
     </Box>
   </Box>
 );

@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { Box } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
@@ -54,8 +55,14 @@ const stats = (colors) => [
   },
 ];
 
-const StatsRow = ({ colors }) =>
-  stats(colors).map((stat) => (
+const StatsRow = ({ colors }) => {
+  const items = useMemo(
+    () => stats(colors),
+    // Optimisation Lighthouse (Phase 2) : évite de recréer la config statique à chaque rendu
+    [colors]
+  );
+
+  return items.map((stat) => (
     <Box
       key={stat.key}
       gridColumn="span 3"
@@ -73,5 +80,6 @@ const StatsRow = ({ colors }) =>
       />
     </Box>
   ));
+};
 
 export default StatsRow;

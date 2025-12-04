@@ -1,5 +1,21 @@
+import { lazy, Suspense } from "react";
 import { Box, Typography } from "@mui/material";
-import BarChart from "../../../components/BarChart";
+
+// Optimisation Lighthouse (Phase 2) : lazy-load du chart pour réduire le JS initial
+const BarChart = lazy(() => import("../../../components/BarChart"));
+
+const ChartFallback = ({ colors }) => (
+  <Box
+    height="100%"
+    width="100%"
+    display="flex"
+    alignItems="center"
+    justifyContent="center"
+    color={colors.grey[200]}
+  >
+    <Typography variant="body2">Loading chart...</Typography>
+  </Box>
+);
 
 const SalesQuantityCard = ({ colors }) => (
   <Box
@@ -15,7 +31,9 @@ const SalesQuantityCard = ({ colors }) => (
       Sales Quantity
     </Typography>
     <Box height="250px" mt="-20px">
-      <BarChart isDashboard />
+      <Suspense fallback={<ChartFallback colors={colors} />}>
+        <BarChart isDashboard />
+      </Suspense>
     </Box>
   </Box>
 );

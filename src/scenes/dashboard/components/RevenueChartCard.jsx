@@ -1,6 +1,22 @@
+import { lazy, Suspense } from "react";
 import { Box, IconButton, Typography } from "@mui/material";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import LineChart from "../../../components/LineChart";
+
+// Optimisation Lighthouse (Phase 2) : lazy-load du chart pour alléger le bundle initial
+const LineChart = lazy(() => import("../../../components/LineChart"));
+
+const ChartFallback = ({ colors }) => (
+  <Box
+    height="100%"
+    width="100%"
+    display="flex"
+    alignItems="center"
+    justifyContent="center"
+    color={colors.grey[200]}
+  >
+    <Typography variant="body2">Loading chart...</Typography>
+  </Box>
+);
 
 const RevenueChartCard = ({ colors }) => (
   <Box
@@ -32,7 +48,9 @@ const RevenueChartCard = ({ colors }) => (
       </Box>
     </Box>
     <Box height="250px" m="-20px 0 0 0">
-      <LineChart isDashboard />
+      <Suspense fallback={<ChartFallback colors={colors} />}>
+        <LineChart isDashboard />
+      </Suspense>
     </Box>
   </Box>
 );
