@@ -1,0 +1,530 @@
+<head>
+    <style>
+        body {
+            font-family: Sans-serif;
+            font-size: 11px;
+        }
+
+        .slice {
+            cursor: pointer;
+        }
+
+        .slice .main-arc {
+            stroke: #fff;
+            stroke-width: 1px;
+        }
+
+        .slice .hidden-arc {
+            fill: none;
+        }
+
+        .slice text {
+            pointer-events: none;
+            dominant-baseline: middle;
+            text-anchor: middle;
+        }
+    </style>
+
+    <script src='https://d3js.org/d3.v4.min.js'></script>
+</head>
+<body>
+<script>
+    const width = window.innerWidth,
+        height = window.innerHeight,
+        maxRadius = (Math.min(width, height) / 2) - 5;
+
+    const formatNumber = d3.format(',d');
+
+    const x = d3.scaleLinear()
+        .range([0, 2 * Math.PI])
+        .clamp(true);
+
+    const y = d3.scaleSqrt()
+        .range([maxRadius * .1, maxRadius]);
+
+    const color = d3.scaleOrdinal(d3.schemeCategory20);
+
+    const partition = d3.partition();
+
+    const arc = d3.arc()
+        .startAngle(d => x(d.x0))
+        .endAngle(d => x(d.x1))
+        .innerRadius(d => Math.max(0, y(d.y0)))
+        .outerRadius(d => Math.max(0, y(d.y1)));
+
+    const middleArcLine = d => {
+        const halfPi = Math.PI / 2;
+        const angles = [x(d.x0) - halfPi, x(d.x1) - halfPi];
+        const r = Math.max(0, (y(d.y0) + y(d.y1)) / 2);
+
+        const middleAngle = (angles[1] + angles[0]) / 2;
+        const invertDirection = middleAngle > 0 && middleAngle < Math.PI; // On lower quadrants write text ccw
+        if (invertDirection) {
+            angles.reverse();
+        }
+
+        const path = d3.path();
+        path.arc(0, 0, r, angles[0], angles[1], invertDirection);
+        return path.toString();
+    };
+
+    const textFits = d => {
+        const CHAR_SPACE = 6;
+
+        const deltaAngle = x(d.x1) - x(d.x0);
+        const r = Math.max(0, (y(d.y0) + y(d.y1)) / 2);
+        const perimeter = r * deltaAngle;
+
+        return d.data.name.length * CHAR_SPACE < perimeter;
+    };
+
+    const svg = d3.select('body').append('svg')
+        .style('width', '100vw')
+        .style('height', '100vh')
+        .attr('viewBox', `${-width / 2} ${-height / 2} ${width} ${height}`)
+        .on('click', () => focusOn()); // Reset zoom on canvas click
+
+    var rootData = {
+        "name": "",
+        "children": [ {
+  "name" : "scenes",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "form",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "index.jsx",
+      "color" : "",
+      "size" : 153,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "calendar",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "calendar.jsx",
+      "color" : "",
+      "size" : 123,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "invoices",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "index.jsx",
+      "color" : "",
+      "size" : 80,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "faq",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "index.jsx",
+      "color" : "",
+      "size" : 83,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "contacts",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "index.jsx",
+      "color" : "",
+      "size" : 99,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "pie",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "index.jsx",
+      "color" : "",
+      "size" : 14,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "dashboard",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "components",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "TransactionsCard.jsx",
+        "color" : "",
+        "size" : 53,
+        "children" : [ ]
+      }, {
+        "name" : "RevenueChartCard.jsx",
+        "color" : "",
+        "size" : 38,
+        "children" : [ ]
+      }, {
+        "name" : "SalesQuantityCard.jsx",
+        "color" : "",
+        "size" : 21,
+        "children" : [ ]
+      }, {
+        "name" : "CampaignCard.jsx",
+        "color" : "",
+        "size" : 26,
+        "children" : [ ]
+      }, {
+        "name" : "StatsRow.jsx",
+        "color" : "",
+        "size" : 74,
+        "children" : [ ]
+      }, {
+        "name" : "GeographyTrafficCard.jsx",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "index.jsx",
+      "color" : "",
+      "size" : 54,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "team",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "index.jsx",
+      "color" : "",
+      "size" : 134,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "line",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "index.jsx",
+      "color" : "",
+      "size" : 14,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "bar",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "index.jsx",
+      "color" : "",
+      "size" : 14,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "global",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "Sidebar.jsx",
+      "color" : "",
+      "size" : 235,
+      "children" : [ ]
+    }, {
+      "name" : "Topbar.jsx",
+      "color" : "",
+      "size" : 50,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "geography",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "index.jsx",
+      "color" : "",
+      "size" : 21,
+      "children" : [ ]
+    } ]
+  } ]
+}, {
+  "name" : "test",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "renderWithTheme.jsx",
+    "color" : "",
+    "size" : 15,
+    "children" : [ ]
+  }, {
+    "name" : "setupTests.js",
+    "color" : "",
+    "size" : 9,
+    "children" : [ ]
+  } ]
+}, {
+  "name" : "index.js",
+  "color" : "",
+  "size" : 12,
+  "children" : [ ]
+}, {
+  "name" : "theme.js",
+  "color" : "",
+  "size" : 203,
+  "children" : [ ]
+}, {
+  "name" : "utils",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "__test__",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "stats.test.js",
+      "color" : "",
+      "size" : 45,
+      "children" : [ ]
+    }, {
+      "name" : "filters.test.js",
+      "color" : "",
+      "size" : 57,
+      "children" : [ ]
+    }, {
+      "name" : "formatters.test.js",
+      "color" : "",
+      "size" : 43,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "formatters.js",
+    "color" : "",
+    "size" : 39,
+    "children" : [ ]
+  }, {
+    "name" : "filters.js",
+    "color" : "",
+    "size" : 29,
+    "children" : [ ]
+  }, {
+    "name" : "stats.js",
+    "color" : "",
+    "size" : 23,
+    "children" : [ ]
+  } ]
+}, {
+  "name" : "components",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "Header.jsx",
+    "color" : "",
+    "size" : 23,
+    "children" : [ ]
+  }, {
+    "name" : "BarChart.jsx",
+    "color" : "",
+    "size" : 127,
+    "children" : [ ]
+  }, {
+    "name" : "LineChart.jsx",
+    "color" : "",
+    "size" : 114,
+    "children" : [ ]
+  }, {
+    "name" : "__test__",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "Header.test.jsx",
+      "color" : "",
+      "size" : 20,
+      "children" : [ ]
+    }, {
+      "name" : "LineChart.test.jsx",
+      "color" : "",
+      "size" : 33,
+      "children" : [ ]
+    }, {
+      "name" : "StatBox.test.jsx",
+      "color" : "",
+      "size" : 22,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "PieChart.jsx",
+    "color" : "",
+    "size" : 107,
+    "children" : [ ]
+  }, {
+    "name" : "ProgressCircle.jsx",
+    "color" : "",
+    "size" : 20,
+    "children" : [ ]
+  }, {
+    "name" : "GeographyChart.jsx",
+    "color" : "",
+    "size" : 83,
+    "children" : [ ]
+  }, {
+    "name" : "StatBox.jsx",
+    "color" : "",
+    "size" : 39,
+    "children" : [ ]
+  } ]
+}, {
+  "name" : "data",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "geographyData.js",
+    "color" : "",
+    "size" : 686,
+    "children" : [ ]
+  }, {
+    "name" : "teamData.js",
+    "color" : "",
+    "size" : 74,
+    "children" : [ ]
+  }, {
+    "name" : "contactsData.js",
+    "color" : "",
+    "size" : 123,
+    "children" : [ ]
+  }, {
+    "name" : "mockData.js",
+    "color" : "",
+    "size" : 8,
+    "children" : [ ]
+  }, {
+    "name" : "barData.js",
+    "color" : "",
+    "size" : 79,
+    "children" : [ ]
+  }, {
+    "name" : "lineData.js",
+    "color" : "",
+    "size" : 165,
+    "children" : [ ]
+  }, {
+    "name" : "pieData.js",
+    "color" : "",
+    "size" : 32,
+    "children" : [ ]
+  }, {
+    "name" : "transactionsData.js",
+    "color" : "",
+    "size" : 50,
+    "children" : [ ]
+  }, {
+    "name" : "invoicesData.js",
+    "color" : "",
+    "size" : 66,
+    "children" : [ ]
+  } ]
+}, {
+  "name" : "App.js",
+  "color" : "",
+  "size" : 44,
+  "children" : [ ]
+}, {
+  "name" : "validation",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "teamSchemas.js",
+    "color" : "",
+    "size" : 15,
+    "children" : [ ]
+  } ]
+} ]
+    }
+
+
+    root = d3.hierarchy(rootData);
+    root.sum(d => d.size);
+
+    const slice = svg.selectAll('g.slice')
+        .data(partition(root).descendants());
+
+    slice.exit().remove();
+
+    const newSlice = slice.enter()
+        .append('g').attr('class', 'slice')
+        .on('click', d => {
+            d3.event.stopPropagation();
+            focusOn(d);
+        });
+
+    newSlice.append('title')
+        .text(d => d.data.name + '\n' + formatNumber(d.value));
+
+    newSlice.append('path')
+        .attr('class', 'main-arc')
+        .style('fill', d => color((d.children ? d : d.parent).data.name))
+        .attr('d', arc);
+
+    newSlice.append('path')
+        .attr('class', 'hidden-arc')
+        .attr('id', (_, i) => `hiddenArc${i}`)
+        .attr('d', middleArcLine);
+
+    const text = newSlice.append('text')
+        .attr('display', d => textFits(d) ? null : 'none');
+
+    // Add white contour
+    text.append('textPath')
+        .attr('startOffset', '50%')
+        .attr('xlink:href', (_, i) => `#hiddenArc${i}`)
+        .text(d => d.data.name)
+        .style('fill', 'none')
+        .style('stroke', '#fff')
+        .style('stroke-width', 5)
+        .style('stroke-linejoin', 'round');
+
+    text.append('textPath')
+        .attr('startOffset', '50%')
+        .attr('xlink:href', (_, i) => `#hiddenArc${i}`)
+        .text(d => d.data.name);
+
+    function focusOn(d = {x0: 0, x1: 1, y0: 0, y1: 1}) {
+        const transition = svg.transition()
+            .duration(750)
+            .tween('scale', () => {
+                const xd = d3.interpolate(x.domain(), [d.x0, d.x1]),
+                    yd = d3.interpolate(y.domain(), [d.y0, 1]);
+                return t => {
+                    x.domain(xd(t));
+                    y.domain(yd(t));
+                };
+            });
+
+        transition.selectAll('path.main-arc')
+            .attrTween('d', d => () => arc(d));
+
+        transition.selectAll('path.hidden-arc')
+            .attrTween('d', d => () => middleArcLine(d));
+
+        transition.selectAll('text')
+            .attrTween('display', d => () => textFits(d) ? null : 'none');
+
+        moveStackToFront(d);
+
+        //
+
+        function moveStackToFront(elD) {
+            svg.selectAll('.slice').filter(d => d === elD)
+                .each(function (d) {
+                    this.parentNode.appendChild(this);
+                    if (d.parent) {
+                        moveStackToFront(d.parent);
+                    }
+                })
+        }
+    }
+</script>
+</body>

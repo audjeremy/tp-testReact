@@ -1,0 +1,269 @@
+<html>
+<head>
+    <title>scenes/global/Sidebar.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">scenes/global/Sidebar.jsx (<b>235</b> lines of code) (<a href="Sidebar.jsx">raw</a>):</h3>
+<div id="editor">import { useState } from &quot;react&quot;;
+import { ProSidebar, Menu, MenuItem } from &quot;react-pro-sidebar&quot;;
+import { Box, IconButton, Typography, useTheme } from &quot;@mui/material&quot;;
+import { Link } from &quot;react-router-dom&quot;;
+import &quot;react-pro-sidebar/dist/css/styles.css&quot;;
+import { tokens } from &quot;../../theme&quot;;
+import HomeOutlinedIcon from &quot;@mui/icons-material/HomeOutlined&quot;;
+import PeopleOutlinedIcon from &quot;@mui/icons-material/PeopleOutlined&quot;;
+import ContactsOutlinedIcon from &quot;@mui/icons-material/ContactsOutlined&quot;;
+import ReceiptOutlinedIcon from &quot;@mui/icons-material/ReceiptOutlined&quot;;
+import PersonOutlinedIcon from &quot;@mui/icons-material/PersonOutlined&quot;;
+import CalendarTodayOutlinedIcon from &quot;@mui/icons-material/CalendarTodayOutlined&quot;;
+import HelpOutlineOutlinedIcon from &quot;@mui/icons-material/HelpOutlineOutlined&quot;;
+import BarChartOutlinedIcon from &quot;@mui/icons-material/BarChartOutlined&quot;;
+import PieChartOutlineOutlinedIcon from &quot;@mui/icons-material/PieChartOutlineOutlined&quot;;
+import TimelineOutlinedIcon from &quot;@mui/icons-material/TimelineOutlined&quot;;
+import MenuOutlinedIcon from &quot;@mui/icons-material/MenuOutlined&quot;;
+import MapOutlinedIcon from &quot;@mui/icons-material/MapOutlined&quot;;
+
+const Item = ({ title, to, icon, selected, setSelected, testId }) =&gt; {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+  return (
+    &lt;MenuItem
+      data-testid={testId}
+      active={selected === title}
+      style={{
+        color: colors.grey[100],
+      }}
+      onClick={() =&gt; setSelected(title)}
+      icon={icon}
+      aria-label={`go to ${title.toLowerCase()}`}
+    &gt;
+      &lt;Typography&gt;{title}&lt;/Typography&gt;
+      &lt;Link to={to} /&gt;
+    &lt;/MenuItem&gt;
+  );
+};
+
+const SidebarSection = ({ title, items, colors, selected, setSelected }) =&gt; (
+  &lt;&gt;
+    {title &amp;&amp; (
+      &lt;Typography
+        variant=&quot;h6&quot;
+        color={colors.grey[300]}
+        sx={{ m: &quot;15px 0 5px 20px&quot; }}
+      &gt;
+        {title}
+      &lt;/Typography&gt;
+    )}
+    {items.map((item) =&gt; (
+      &lt;Item
+        key={item.title}
+        {...item}
+        selected={selected}
+        setSelected={setSelected}
+      /&gt;
+    ))}
+  &lt;/&gt;
+);
+
+const buildMenuSections = (colors) =&gt; [
+  {
+    key: &quot;dashboard&quot;,
+    items: [
+      {
+        title: &quot;Dashboard&quot;,
+        to: &quot;/&quot;,
+        icon: &lt;HomeOutlinedIcon /&gt;,
+      },
+    ],
+  },
+  {
+    key: &quot;data&quot;,
+    title: &quot;Data&quot;,
+    items: [
+      {
+        title: &quot;Manage Team&quot;,
+        to: &quot;/team&quot;,
+        icon: &lt;PeopleOutlinedIcon /&gt;,
+        testId: &quot;menu-teams&quot;,
+      },
+      {
+        title: &quot;Contacts Information&quot;,
+        to: &quot;/contacts&quot;,
+        icon: &lt;ContactsOutlinedIcon /&gt;,
+      },
+      {
+        title: &quot;Invoices Balances&quot;,
+        to: &quot;/invoices&quot;,
+        icon: &lt;ReceiptOutlinedIcon /&gt;,
+      },
+    ],
+  },
+  {
+    key: &quot;pages&quot;,
+    title: &quot;Pages&quot;,
+    items: [
+      {
+        title: &quot;Profile Form&quot;,
+        to: &quot;/form&quot;,
+        icon: &lt;PersonOutlinedIcon /&gt;,
+      },
+      {
+        title: &quot;Calendar&quot;,
+        to: &quot;/calendar&quot;,
+        icon: &lt;CalendarTodayOutlinedIcon /&gt;,
+      },
+      {
+        title: &quot;FAQ Page&quot;,
+        to: &quot;/faq&quot;,
+        icon: &lt;HelpOutlineOutlinedIcon /&gt;,
+      },
+    ],
+  },
+  {
+    key: &quot;charts&quot;,
+    title: &quot;Charts&quot;,
+    items: [
+      {
+        title: &quot;Bar Chart&quot;,
+        to: &quot;/bar&quot;,
+        icon: &lt;BarChartOutlinedIcon /&gt;,
+      },
+      {
+        title: &quot;Pie Chart&quot;,
+        to: &quot;/pie&quot;,
+        icon: &lt;PieChartOutlineOutlinedIcon /&gt;,
+      },
+      {
+        title: &quot;Line Chart&quot;,
+        to: &quot;/line&quot;,
+        icon: &lt;TimelineOutlinedIcon /&gt;,
+      },
+      {
+        title: &quot;Geography Chart&quot;,
+        to: &quot;/geography&quot;,
+        icon: &lt;MapOutlinedIcon /&gt;,
+      },
+    ],
+  },
+];
+
+const Sidebar = () =&gt; {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [selected, setSelected] = useState(&quot;Dashboard&quot;);
+
+  return (
+    &lt;Box
+      sx={{
+        &quot;&amp; .pro-sidebar-inner&quot;: {
+          background: `${colors.primary[400]} !important`,
+        },
+        &quot;&amp; .pro-icon-wrapper&quot;: {
+          backgroundColor: &quot;transparent !important&quot;,
+        },
+        &quot;&amp; .pro-inner-item&quot;: {
+          padding: &quot;5px 35px 5px 20px !important&quot;,
+        },
+        &quot;&amp; .pro-inner-item:hover&quot;: {
+          color: &quot;#868dfb !important&quot;,
+        },
+        &quot;&amp; .pro-menu-item.active&quot;: {
+          color: &quot;#6870fa !important&quot;,
+        },
+      }}
+    &gt;
+      &lt;ProSidebar collapsed={isCollapsed}&gt;
+        &lt;Menu iconShape=&quot;square&quot;&gt;
+          {/* LOGO AND MENU ICON */}
+          &lt;MenuItem
+            onClick={() =&gt; setIsCollapsed(!isCollapsed)}
+            icon={isCollapsed ? &lt;MenuOutlinedIcon /&gt; : undefined}
+            style={{
+              margin: &quot;10px 0 20px 0&quot;,
+              color: colors.grey[100],
+            }}
+          &gt;
+            {!isCollapsed &amp;&amp; (
+              &lt;Box
+                display=&quot;flex&quot;
+                justifyContent=&quot;space-between&quot;
+                alignItems=&quot;center&quot;
+                ml=&quot;15px&quot;
+              &gt;
+                &lt;Typography variant=&quot;h3&quot; color={colors.grey[100]}&gt;
+                  ADMINIS
+                &lt;/Typography&gt;
+                &lt;IconButton onClick={() =&gt; setIsCollapsed(!isCollapsed)}&gt;
+                  &lt;MenuOutlinedIcon /&gt;
+                &lt;/IconButton&gt;
+              &lt;/Box&gt;
+            )}
+          &lt;/MenuItem&gt;
+
+          {!isCollapsed &amp;&amp; (
+            &lt;Box mb=&quot;25px&quot;&gt;
+              &lt;Box display=&quot;flex&quot; justifyContent=&quot;center&quot; alignItems=&quot;center&quot;&gt;
+                &lt;img
+                  alt=&quot;profile-user&quot;
+                  width=&quot;100px&quot;
+                  height=&quot;100px&quot;
+                  src={`../../assets/user.png`}
+                  style={{ cursor: &quot;pointer&quot;, borderRadius: &quot;50%&quot; }}
+                /&gt;
+              &lt;/Box&gt;
+              &lt;Box textAlign=&quot;center&quot;&gt;
+                &lt;Typography
+                  variant=&quot;h2&quot;
+                  color={colors.grey[100]}
+                  fontWeight=&quot;bold&quot;
+                  sx={{ m: &quot;10px 0 0 0&quot; }}
+                &gt;
+                  Ed Roh
+                &lt;/Typography&gt;
+                &lt;Typography variant=&quot;h5&quot; color={colors.greenAccent[500]}&gt;
+                  VP Fancy Admin
+                &lt;/Typography&gt;
+              &lt;/Box&gt;
+            &lt;/Box&gt;
+          )}
+
+          &lt;Box paddingLeft={isCollapsed ? undefined : &quot;10%&quot;}&gt;
+            {buildMenuSections(colors).map((section) =&gt; (
+              &lt;SidebarSection
+                key={section.key}
+                title={section.title}
+                items={section.items}
+                colors={colors}
+                selected={selected}
+                setSelected={setSelected}
+              /&gt;
+            ))}
+          &lt;/Box&gt;
+        &lt;/Menu&gt;
+      &lt;/ProSidebar&gt;
+    &lt;/Box&gt;
+  );
+};
+
+export default Sidebar;
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

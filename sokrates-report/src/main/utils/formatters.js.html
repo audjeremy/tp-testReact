@@ -1,0 +1,69 @@
+<html>
+<head>
+    <title>utils/formatters.js</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">utils/formatters.js (<b>39</b> lines of code) (<a href="formatters.js">raw</a>):</h3>
+<div id="editor">export function formatCurrency(amount, { locale = 'en-CA', currency = 'CAD' } = {}) {
+  if (typeof amount !== 'number' || !Number.isFinite(amount)) {
+    throw new TypeError('amount must be a finite number')
+  }
+  try {
+  
+    return new Intl.NumberFormat(locale, {
+      style: 'currency',
+      currency,
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(amount)
+  } catch {
+    // fallback simple si Intl &eacute;choue (rare)
+    return `${amount.toFixed(2)} ${currency}`
+  }
+}
+
+export function formatPercent(value, { digits = 0 } = {}) {
+  if (typeof value !== 'number' || Number.isNaN(value)) {
+    throw new TypeError('percent must be a number')
+  }
+  if (value &lt; 0 || value &gt; 1) {
+    throw new RangeError('percent must be between 0 and 1')
+  }
+  const pct = (value * 100).toFixed(digits)
+  // On normalise le point d&eacute;cimal et on ajoute le symbole %
+  return `${pct}%`
+}
+
+export function formatName(first, last) {
+  const safe = (s) =&gt;
+    (typeof s === 'string' ? s : '')
+      .trim()
+      .replace(/\s+/g, ' ')
+      .toLowerCase()
+      .replace(/^\p{Letter}/u, (ch) =&gt; ch.toUpperCase()) // capitalise 1re lettre (unicode)
+  const f = safe(first)
+  const l = safe(last)
+  if (f &amp;&amp; l) return `${f} ${l}`
+  if (f) return f
+  if (l) return l
+  return ''
+}</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/javascript");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

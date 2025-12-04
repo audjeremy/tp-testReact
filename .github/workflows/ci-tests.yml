@@ -22,7 +22,19 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
+
+      - name: Run unit tests (Vitest)
+        run: |
+          # Lance les tests unitaires Vitest
+          npm test
 
       - name: Run Cypress component tests
-        run: npx cypress run --component
+        run: |
+          # Lance les tests Cypress Component
+          npm run ct:run
+
+      - name: Run Cypress e2e tests
+        run: |
+          # Lance les tests Cypress E2E
+          npm run e2e:run

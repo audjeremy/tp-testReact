@@ -1,0 +1,10 @@
+Path	Lines of Code
+data/barData.js	79
+data/contactsData.js	123
+data/geographyData.js	686
+data/invoicesData.js	66
+data/lineData.js	165
+data/mockData.js	8
+data/pieData.js	32
+data/teamData.js	74
+data/transactionsData.js	50

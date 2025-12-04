@@ -1,0 +1,301 @@
+[ {
+  "relativePath" : "scenes/form/index.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 153,
+  "components" : [ "primary::scenes/form" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "scenes/calendar/calendar.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 123,
+  "components" : [ "primary::scenes/calendar" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "scenes/invoices/index.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 80,
+  "components" : [ "primary::scenes/invoices" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "scenes/faq/index.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 83,
+  "components" : [ "primary::scenes/faq" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "scenes/contacts/index.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 99,
+  "components" : [ "primary::scenes/contacts" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "scenes/pie/index.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 14,
+  "components" : [ "primary::scenes/pie" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "scenes/dashboard/components/TransactionsCard.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 53,
+  "components" : [ "primary::scenes/dashboard/components" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "scenes/dashboard/components/RevenueChartCard.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 38,
+  "components" : [ "primary::scenes/dashboard/components" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "scenes/dashboard/components/SalesQuantityCard.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 21,
+  "components" : [ "primary::scenes/dashboard/components" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "scenes/dashboard/components/CampaignCard.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 26,
+  "components" : [ "primary::scenes/dashboard/components" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "scenes/dashboard/components/StatsRow.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 74,
+  "components" : [ "primary::scenes/dashboard/components" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "scenes/dashboard/components/GeographyTrafficCard.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 18,
+  "components" : [ "primary::scenes/dashboard/components" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "scenes/dashboard/index.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 54,
+  "components" : [ "primary::scenes/dashboard" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "scenes/team/index.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 134,
+  "components" : [ "primary::scenes/team" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "scenes/line/index.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 14,
+  "components" : [ "primary::scenes/line" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "scenes/bar/index.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 14,
+  "components" : [ "primary::scenes/bar" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "scenes/global/Sidebar.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 235,
+  "components" : [ "primary::scenes/global" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "scenes/global/Topbar.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 50,
+  "components" : [ "primary::scenes/global" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "scenes/geography/index.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 21,
+  "components" : [ "primary::scenes/geography" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "test/renderWithTheme.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 15,
+  "components" : [ "primary::test" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "test/setupTests.js",
+  "extension" : "js",
+  "linesOfCode" : 9,
+  "components" : [ "primary::test" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "index.js",
+  "extension" : "js",
+  "linesOfCode" : 12,
+  "components" : [ "primary::ROOT" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "theme.js",
+  "extension" : "js",
+  "linesOfCode" : 203,
+  "components" : [ "primary::ROOT" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "utils/__test__/stats.test.js",
+  "extension" : "js",
+  "linesOfCode" : 45,
+  "components" : [ "primary::utils/__test__" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "utils/__test__/filters.test.js",
+  "extension" : "js",
+  "linesOfCode" : 57,
+  "components" : [ "primary::utils/__test__" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "utils/__test__/formatters.test.js",
+  "extension" : "js",
+  "linesOfCode" : 43,
+  "components" : [ "primary::utils/__test__" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "utils/formatters.js",
+  "extension" : "js",
+  "linesOfCode" : 39,
+  "components" : [ "primary::utils" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "utils/filters.js",
+  "extension" : "js",
+  "linesOfCode" : 29,
+  "components" : [ "primary::utils" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "utils/stats.js",
+  "extension" : "js",
+  "linesOfCode" : 23,
+  "components" : [ "primary::utils" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "components/Header.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 23,
+  "components" : [ "primary::components" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "components/BarChart.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 127,
+  "components" : [ "primary::components" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "components/LineChart.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 114,
+  "components" : [ "primary::components" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "components/__test__/Header.test.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 20,
+  "components" : [ "primary::components/__test__" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "components/__test__/LineChart.test.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 33,
+  "components" : [ "primary::components/__test__" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "components/__test__/StatBox.test.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 22,
+  "components" : [ "primary::components/__test__" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "components/PieChart.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 107,
+  "components" : [ "primary::components" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "components/ProgressCircle.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 20,
+  "components" : [ "primary::components" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "components/GeographyChart.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 83,
+  "components" : [ "primary::components" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "components/StatBox.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 39,
+  "components" : [ "primary::components" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "data/geographyData.js",
+  "extension" : "js",
+  "linesOfCode" : 686,
+  "components" : [ "primary::data" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "data/teamData.js",
+  "extension" : "js",
+  "linesOfCode" : 74,
+  "components" : [ "primary::data" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "data/contactsData.js",
+  "extension" : "js",
+  "linesOfCode" : 123,
+  "components" : [ "primary::data" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "data/mockData.js",
+  "extension" : "js",
+  "linesOfCode" : 8,
+  "components" : [ "primary::data" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "data/barData.js",
+  "extension" : "js",
+  "linesOfCode" : 79,
+  "components" : [ "primary::data" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "data/lineData.js",
+  "extension" : "js",
+  "linesOfCode" : 165,
+  "components" : [ "primary::data" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "data/pieData.js",
+  "extension" : "js",
+  "linesOfCode" : 32,
+  "components" : [ "primary::data" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "data/transactionsData.js",
+  "extension" : "js",
+  "linesOfCode" : 50,
+  "components" : [ "primary::data" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "data/invoicesData.js",
+  "extension" : "js",
+  "linesOfCode" : 66,
+  "components" : [ "primary::data" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "App.js",
+  "extension" : "js",
+  "linesOfCode" : 44,
+  "components" : [ "primary::ROOT" ],
+  "concerns" : [ ]
+}, {
+  "relativePath" : "validation/teamSchemas.js",
+  "extension" : "js",
+  "linesOfCode" : 15,
+  "components" : [ "primary::validation" ],
+  "concerns" : [ ]
+} ]

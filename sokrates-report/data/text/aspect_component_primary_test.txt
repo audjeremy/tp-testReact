@@ -1,0 +1,3 @@
+Path	Lines of Code
+test/renderWithTheme.jsx	15
+test/setupTests.js	9

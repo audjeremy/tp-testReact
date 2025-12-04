@@ -1,0 +1,169 @@
+<html>
+<head>
+    <title>scenes/team/index.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">scenes/team/index.jsx (<b>134</b> lines of code) (<a href="index.jsx">raw</a>):</h3>
+<div id="editor">import { Box, Typography, useTheme, TextField } from &quot;@mui/material&quot;;
+import { DataGrid } from &quot;@mui/x-data-grid&quot;;
+import { tokens } from &quot;../../theme&quot;;
+import { mockDataTeam } from &quot;../../data/mockData&quot;;
+import { TeamListSchema, TeamFilterSchema } from &quot;../../validation/teamSchemas&quot;; import AdminPanelSettingsOutlinedIcon from &quot;@mui/icons-material/AdminPanelSettingsOutlined&quot;;
+import { useState } from &quot;react&quot;;
+import LockOpenOutlinedIcon from &quot;@mui/icons-material/LockOpenOutlined&quot;;
+import SecurityOutlinedIcon from &quot;@mui/icons-material/SecurityOutlined&quot;;
+import Header from &quot;../../components/Header&quot;;
+
+
+const Team = () =&gt; {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+  const [filter, setFilter] = useState(&quot;&quot;);
+  const [filterError, setFilterError] = useState(&quot;&quot;);
+  const columns = [
+    { field: &quot;id&quot;, headerName: &quot;ID&quot; },
+    {
+      field: &quot;name&quot;,
+      headerName: &quot;Name&quot;,
+      flex: 1,
+      cellClassName: &quot;name-column--cell&quot;,
+    },
+    {
+      field: &quot;age&quot;,
+      headerName: &quot;Age&quot;,
+      type: &quot;number&quot;,
+      headerAlign: &quot;left&quot;,
+      align: &quot;left&quot;,
+    },
+    {
+      field: &quot;phone&quot;,
+      headerName: &quot;Phone Number&quot;,
+      flex: 1,
+    },
+    {
+      field: &quot;email&quot;,
+      headerName: &quot;Email&quot;,
+      flex: 1,
+    },
+    {
+      field: &quot;accessLevel&quot;,
+      headerName: &quot;Access Level&quot;,
+      flex: 1,
+      renderCell: ({ row: { access } }) =&gt; {
+        return (
+          &lt;Box
+            width=&quot;60%&quot;
+            m=&quot;0 auto&quot;
+            p=&quot;5px&quot;
+            display=&quot;flex&quot;
+            justifyContent=&quot;center&quot;
+            backgroundColor={
+              access === &quot;admin&quot;
+                ? colors.greenAccent[600]
+                : access === &quot;manager&quot;
+                  ? colors.greenAccent[700]
+                  : colors.greenAccent[700]
+            }
+            borderRadius=&quot;4px&quot;
+          &gt;
+            {access === &quot;admin&quot; &amp;&amp; &lt;AdminPanelSettingsOutlinedIcon /&gt;}
+            {access === &quot;manager&quot; &amp;&amp; &lt;SecurityOutlinedIcon /&gt;}
+            {access === &quot;user&quot; &amp;&amp; &lt;LockOpenOutlinedIcon /&gt;}
+            &lt;Typography color={colors.grey[100]} sx={{ ml: &quot;5px&quot; }}&gt;
+              {access}
+            &lt;/Typography&gt;
+          &lt;/Box&gt;
+        );
+      },
+    },
+  ];
+  let rows = [];
+
+  try {
+    rows = TeamListSchema.parse(mockDataTeam);
+  } catch (err) {
+    console.error(&quot;Invalid team data&quot;, err);
+    rows = [];
+  }
+
+  // filtre appliqu&eacute; si pas d'erreur et filtre non vide
+  const filteredRows =
+    filterError || filter.trim() === &quot;&quot;
+      ? rows
+      : rows.filter((row) =&gt;
+        row.name.toLowerCase().includes(filter.toLowerCase())
+      );
+
+  const handleFilterChange = (event) =&gt; {
+    const value = event.target.value;
+    setFilter(value);
+
+    try {
+      // validation avec Zod + format des erreurs
+      TeamFilterSchema.parse(value);
+      setFilterError(&quot;&quot;);
+    } catch (err) {
+      const formatted = err.format();
+      const msg = formatted._errors?.[0] || &quot;Invalid filter&quot;;
+      setFilterError(msg);
+    }
+  };
+  return (
+    &lt;Box m=&quot;20px&quot;&gt;
+      &lt;Header title=&quot;TEAM&quot; subtitle=&quot;Managing the Team Members&quot; /&gt;
+
+      {/* 👇 Champ de filtre + erreur */}
+      &lt;Box mb=&quot;10px&quot; mt=&quot;10px&quot;&gt;
+        &lt;TextField
+          label=&quot;Filter by name&quot;
+          variant=&quot;outlined&quot;
+          size=&quot;small&quot;
+          value={filter}
+          onChange={handleFilterChange}
+          inputProps={{ &quot;aria-label&quot;: &quot;team filter&quot; }}
+        /&gt;
+        {filterError &amp;&amp; (
+          &lt;Typography
+            color=&quot;error&quot;
+            role=&quot;alert&quot;
+            sx={{ mt: &quot;5px&quot; }}
+          &gt;
+            {filterError}
+          &lt;/Typography&gt;
+        )}
+      &lt;/Box&gt;
+
+      &lt;Box
+        m=&quot;40px 0 0 0&quot;
+        height=&quot;75vh&quot;
+        sx={{
+          // (ton sx existant)
+        }}
+      &gt;
+        &lt;DataGrid checkboxSelection rows={filteredRows} columns={columns} /&gt;
+      &lt;/Box&gt;
+    &lt;/Box&gt;
+  );
+};
+
+export default Team;
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

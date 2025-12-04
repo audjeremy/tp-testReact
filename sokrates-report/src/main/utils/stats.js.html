@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>utils/stats.js</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">utils/stats.js (<b>23</b> lines of code) (<a href="stats.js">raw</a>):</h3>
+<div id="editor">export function sum(values) {
+  if (!Array.isArray(values) || values.length === 0) return 0
+  return values.reduce((acc, v) =&gt; (Number.isFinite(v) ? acc + v : acc), 0)
+}
+
+export function average(values) {
+  if (!Array.isArray(values) || values.length === 0) return 0
+  let total = 0
+  let count = 0
+  for (const v of values) {
+    if (Number.isFinite(v)) {
+      total += v
+      count += 1
+    }
+  }
+  return count === 0 ? 0 : total / count
+}
+
+export function growthRate(current, previous) {
+  if (!Number.isFinite(current) || !Number.isFinite(previous)) {
+    throw new TypeError('current and previous must be finite number')
+  }
+  if (previous === 0) return null // convention : ind&eacute;fini =&gt; null
+  return (current - previous) / previous
+}</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/javascript");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

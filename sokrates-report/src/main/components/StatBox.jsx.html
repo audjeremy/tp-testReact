@@ -1,0 +1,68 @@
+<html>
+<head>
+    <title>components/StatBox.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">components/StatBox.jsx (<b>39</b> lines of code) (<a href="StatBox.jsx">raw</a>):</h3>
+<div id="editor">import { Box, Typography, useTheme } from &quot;@mui/material&quot;;
+import { tokens } from &quot;../theme&quot;;
+import ProgressCircle from &quot;./ProgressCircle&quot;;
+
+const StatBox = ({ title, subtitle, icon, progress, increase }) =&gt; {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+
+  return (
+    &lt;Box width=&quot;100%&quot; m=&quot;0 30px&quot;&gt;
+      &lt;Box display=&quot;flex&quot; justifyContent=&quot;space-between&quot;&gt;
+        &lt;Box&gt;
+          {icon}
+          &lt;Typography
+            variant=&quot;h4&quot;
+            fontWeight=&quot;bold&quot;
+            sx={{ color: colors.grey[100] }}
+          &gt;
+            {title}
+          &lt;/Typography&gt;
+        &lt;/Box&gt;
+        &lt;Box&gt;
+          &lt;ProgressCircle progress={progress} /&gt;
+        &lt;/Box&gt;
+      &lt;/Box&gt;
+      &lt;Box display=&quot;flex&quot; justifyContent=&quot;space-between&quot; mt=&quot;2px&quot;&gt;
+        &lt;Typography variant=&quot;h5&quot; sx={{ color: colors.greenAccent[500] }}&gt;
+          {subtitle}
+        &lt;/Typography&gt;
+        &lt;Typography
+          variant=&quot;h5&quot;
+          fontStyle=&quot;italic&quot;
+          sx={{ color: colors.greenAccent[600] }}
+        &gt;
+          {increase}
+        &lt;/Typography&gt;
+      &lt;/Box&gt;
+    &lt;/Box&gt;
+  );
+};
+
+export default StatBox;
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

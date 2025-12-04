@@ -1,0 +1,8 @@
+Path	Lines of Code
+components/BarChart.jsx	127
+components/GeographyChart.jsx	83
+components/Header.jsx	23
+components/LineChart.jsx	114
+components/PieChart.jsx	107
+components/ProgressCircle.jsx	20
+components/StatBox.jsx	39

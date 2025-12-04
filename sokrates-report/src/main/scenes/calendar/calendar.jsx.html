@@ -1,0 +1,157 @@
+<html>
+<head>
+    <title>scenes/calendar/calendar.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">scenes/calendar/calendar.jsx (<b>123</b> lines of code) (<a href="calendar.jsx">raw</a>):</h3>
+<div id="editor">import { useState } from &quot;react&quot;;
+import FullCalendar, { formatDate } from &quot;@fullcalendar/react&quot;;
+import dayGridPlugin from &quot;@fullcalendar/daygrid&quot;;
+import timeGridPlugin from &quot;@fullcalendar/timegrid&quot;;
+import interactionPlugin from &quot;@fullcalendar/interaction&quot;;
+import listPlugin from &quot;@fullcalendar/list&quot;;
+import {
+  Box,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+  useTheme,
+} from &quot;@mui/material&quot;;
+import Header from &quot;../../components/Header&quot;;
+import { tokens } from &quot;../../theme&quot;;
+
+const Calendar = () =&gt; {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+  const [currentEvents, setCurrentEvents] = useState([]);
+
+  const handleDateClick = (selected) =&gt; {
+    const title = prompt(&quot;Please enter a new title for your event&quot;);
+    const calendarApi = selected.view.calendar;
+    calendarApi.unselect();
+
+    if (title) {
+      calendarApi.addEvent({
+        id: `${selected.dateStr}-${title}`,
+        title,
+        start: selected.startStr,
+        end: selected.endStr,
+        allDay: selected.allDay,
+      });
+    }
+  };
+
+  const handleEventClick = (selected) =&gt; {
+    if (
+      window.confirm(
+        `Are you sure you want to delete the event '${selected.event.title}'`
+      )
+    ) {
+      selected.event.remove();
+    }
+  };
+
+  return (
+    &lt;Box m=&quot;20px&quot;&gt;
+      &lt;Header title=&quot;Calendar&quot; subtitle=&quot;Full Calendar Interactive Page&quot; /&gt;
+
+      &lt;Box display=&quot;flex&quot; justifyContent=&quot;space-between&quot;&gt;
+        {/* CALENDAR SIDEBAR */}
+        &lt;Box
+          flex=&quot;1 1 20%&quot;
+          backgroundColor={colors.primary[400]}
+          p=&quot;15px&quot;
+          borderRadius=&quot;4px&quot;
+        &gt;
+          &lt;Typography variant=&quot;h5&quot;&gt;Events&lt;/Typography&gt;
+          &lt;List&gt;
+            {currentEvents.map((event) =&gt; (
+              &lt;ListItem
+                key={event.id}
+                sx={{
+                  backgroundColor: colors.greenAccent[500],
+                  margin: &quot;10px 0&quot;,
+                  borderRadius: &quot;2px&quot;,
+                }}
+              &gt;
+                &lt;ListItemText
+                  primary={event.title}
+                  secondary={
+                    &lt;Typography&gt;
+                      {formatDate(event.start, {
+                        year: &quot;numeric&quot;,
+                        month: &quot;short&quot;,
+                        day: &quot;numeric&quot;,
+                      })}
+                    &lt;/Typography&gt;
+                  }
+                /&gt;
+              &lt;/ListItem&gt;
+            ))}
+          &lt;/List&gt;
+        &lt;/Box&gt;
+
+        {/* CALENDAR */}
+        &lt;Box flex=&quot;1 1 100%&quot; ml=&quot;15px&quot;&gt;
+          &lt;FullCalendar
+            height=&quot;75vh&quot;
+            plugins={[
+              dayGridPlugin,
+              timeGridPlugin,
+              interactionPlugin,
+              listPlugin,
+            ]}
+            headerToolbar={{
+              left: &quot;prev,next today&quot;,
+              center: &quot;title&quot;,
+              right: &quot;dayGridMonth,timeGridWeek,timeGridDay,listMonth&quot;,
+            }}
+            initialView=&quot;dayGridMonth&quot;
+            editable={true}
+            selectable={true}
+            selectMirror={true}
+            dayMaxEvents={true}
+            select={handleDateClick}
+            eventClick={handleEventClick}
+            eventsSet={(events) =&gt; setCurrentEvents(events)}
+            initialEvents={[
+              {
+                id: &quot;12315&quot;,
+                title: &quot;All-day event&quot;,
+                date: &quot;2022-09-14&quot;,
+              },
+              {
+                id: &quot;5123&quot;,
+                title: &quot;Timed event&quot;,
+                date: &quot;2022-09-28&quot;,
+              },
+            ]}
+          /&gt;
+        &lt;/Box&gt;
+      &lt;/Box&gt;
+    &lt;/Box&gt;
+  );
+};
+
+export default Calendar;
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

@@ -1,0 +1,105 @@
+<head>
+    <style> body {
+        margin: 0;
+    } </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/force-graph"></script>
+</head>
+
+<body>
+<div id="graph"></div>
+
+<script>
+    const gData = {
+  "nodes" : [ {
+    "id" : "scenes/form",
+    "size" : 153
+  }, {
+    "id" : "scenes/calendar",
+    "size" : 123
+  }, {
+    "id" : "scenes/invoices",
+    "size" : 80
+  }, {
+    "id" : "scenes/faq",
+    "size" : 83
+  }, {
+    "id" : "scenes/contacts",
+    "size" : 99
+  }, {
+    "id" : "scenes/pie",
+    "size" : 14
+  }, {
+    "id" : "scenes/dashboard/components",
+    "size" : 230
+  }, {
+    "id" : "scenes/dashboard",
+    "size" : 54
+  }, {
+    "id" : "scenes/team",
+    "size" : 134
+  }, {
+    "id" : "scenes/line",
+    "size" : 14
+  }, {
+    "id" : "scenes/bar",
+    "size" : 14
+  }, {
+    "id" : "scenes/global",
+    "size" : 285
+  }, {
+    "id" : "scenes/geography",
+    "size" : 21
+  }, {
+    "id" : "test",
+    "size" : 24
+  }, {
+    "id" : "ROOT",
+    "size" : 259
+  }, {
+    "id" : "utils/__test__",
+    "size" : 145
+  }, {
+    "id" : "utils",
+    "size" : 91
+  }, {
+    "id" : "components",
+    "size" : 513
+  }, {
+    "id" : "components/__test__",
+    "size" : 75
+  }, {
+    "id" : "data",
+    "size" : 1283
+  }, {
+    "id" : "validation",
+    "size" : 15
+  } ],
+  "links" : [ ]
+}
+
+    const maxNodeSize = gData.nodes.map(n => n.size).reduce((a, b) => Math.max(a, b));
+    const maxCount = gData.links.map(l => l.count).reduce((a, b) => Math.max(a, b));
+
+    gData.links = gData.links.map(l => {
+        return {source: l.target, target: l.source, count: l.count}
+    });
+    const colorOf = (node) => {
+        if (!node.id.startsWith("[")) return "rgba(135, 206, 235, 0.6)";
+        return "rgba(100,100,100,0.6)";
+    }
+
+    const elem = document.getElementById('graph');
+    const Graph = ForceGraph()(elem)
+        .graphData(gData)
+        .nodeRelSize(4)
+        .nodeVal(n => Math.max(20 * n.size / maxNodeSize, 0.001))
+        .nodeLabel(n => n.id + " (" + n.size + ")")
+        .nodeColor(n => colorOf(n))
+        .linkDirectionalParticles(1)
+        .linkDirectionalParticleSpeed(d => d.count / maxCount * 0.01)
+        .linkOpacity(0.1)
+        .linkWidth(d => 3 * d.count / maxCount + 0.1);
+
+</script>
+</body>

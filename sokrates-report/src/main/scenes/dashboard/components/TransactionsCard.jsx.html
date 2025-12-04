@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title>scenes/dashboard/components/TransactionsCard.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">scenes/dashboard/components/TransactionsCard.jsx (<b>53</b> lines of code) (<a href="TransactionsCard.jsx">raw</a>):</h3>
+<div id="editor">import { Box, Typography } from &quot;@mui/material&quot;;
+import { mockTransactions } from &quot;../../../data/mockData&quot;;
+
+const TransactionsCard = ({ colors }) =&gt; (
+  &lt;Box
+    gridColumn=&quot;span 4&quot;
+    gridRow=&quot;span 2&quot;
+    backgroundColor={colors.primary[400]}
+    overflow=&quot;auto&quot;
+  &gt;
+    &lt;Box
+      display=&quot;flex&quot;
+      justifyContent=&quot;space-between&quot;
+      alignItems=&quot;center&quot;
+      borderBottom={`4px solid ${colors.primary[500]}`}
+      colors={colors.grey[100]}
+      p=&quot;15px&quot;
+    &gt;
+      &lt;Typography color={colors.grey[100]} variant=&quot;h5&quot; fontWeight=&quot;600&quot;&gt;
+        Recent Transactions
+      &lt;/Typography&gt;
+    &lt;/Box&gt;
+    {mockTransactions.map((transaction, i) =&gt; (
+      &lt;Box
+        key={`${transaction.txId}-${i}`}
+        display=&quot;flex&quot;
+        justifyContent=&quot;space-between&quot;
+        alignItems=&quot;center&quot;
+        borderBottom={`4px solid ${colors.primary[500]}`}
+        p=&quot;15px&quot;
+      &gt;
+        &lt;Box&gt;
+          &lt;Typography
+            color={colors.greenAccent[500]}
+            variant=&quot;h5&quot;
+            fontWeight=&quot;600&quot;
+          &gt;
+            {transaction.txId}
+          &lt;/Typography&gt;
+          &lt;Typography color={colors.grey[100]}&gt;{transaction.user}&lt;/Typography&gt;
+        &lt;/Box&gt;
+        &lt;Box color={colors.grey[100]}&gt;{transaction.date}&lt;/Box&gt;
+        &lt;Box
+          backgroundColor={colors.greenAccent[500]}
+          p=&quot;5px 10px&quot;
+          borderRadius=&quot;4px&quot;
+        &gt;
+          ${transaction.cost}
+        &lt;/Box&gt;
+      &lt;/Box&gt;
+    ))}
+  &lt;/Box&gt;
+);
+
+export default TransactionsCard;
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

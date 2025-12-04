@@ -1,0 +1,104 @@
+<html>
+<head>
+    <title>utils/__test__/filters.test.js</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">utils/__test__/filters.test.js (<b>57</b> lines of code) (<a href="filters.test.js">raw</a>):</h3>
+<div id="editor">import { describe, it, expect } from 'vitest'
+import { filterUsersByRole, sortByKey, topNBy } from '../filters'
+
+// Jeu de donn&eacute;es simple et stable pour nos tests
+const USERS = [
+  { id: 1, name: 'Alice', role: 'admin', score: 80 },
+  { id: 2, name: 'Bob', role: 'user',  score: 95 },
+  { id: 3, name: 'Cara', role: 'user',  score: 70 },
+  { id: 4, name: 'Dan',  role: 'admin', score: 50 },
+]
+
+// ---------- filterUsersByRole ----------
+describe('filterUsersByRole', () =&gt; {
+  it('retourne seulement les users du r&ocirc;le demand&eacute; (cas nominal)', () =&gt; {
+    // Arrange
+    const role = 'admin'
+    // Act
+    const out = filterUsersByRole(USERS, role)
+    // Assert
+    expect(out).toEqual([
+      { id: 1, name: 'Alice', role: 'admin', score: 80 },
+      { id: 4, name: 'Dan',  role: 'admin', score: 50 },
+    ])
+  })
+
+  it('retourne [] si aucun &eacute;l&eacute;ment ne correspond (variante)', () =&gt; {
+    const out = filterUsersByRole(USERS, 'manager')
+    expect(out).toEqual([])
+  })
+
+  it('g&egrave;re valeurs invalides en entr&eacute;e (limite): tableau vide si list/role invalides', () =&gt; {
+    expect(filterUsersByRole(null, 'admin')).toEqual([])
+    expect(filterUsersByRole(USERS, null)).toEqual([])
+  })
+})
+
+// ---------- sortByKey ----------
+describe('sortByKey', () =&gt; {
+  it('tri ascendant par cl&eacute; num&eacute;rique (cas nominal)', () =&gt; {
+    // Arrange
+    const items = [...USERS] // copie pour ne pas muter l&rsquo;original
+    // Act
+    const out = sortByKey(items, 'score', 'asc')
+    // Assert (scores croissants: 50,70,80,95)
+    expect(out.map(x =&gt; x.score)).toEqual([50, 70, 80, 95])
+  })
+
+  it('tri descendant par cl&eacute; num&eacute;rique', () =&gt; {
+    const out = sortByKey([...USERS], 'score', 'desc')
+    expect(out.map(x =&gt; x.score)).toEqual([95, 80, 70, 50])
+  })
+
+  it('retourne [] si items invalide / cl&eacute; absente (limite)', () =&gt; {
+    expect(sortByKey(null, 'score', 'asc')).toEqual([])
+    expect(sortByKey([], 'score', 'asc')).toEqual([])
+    // cl&eacute; inexistante &rarr; rien &agrave; trier =&gt; on peut choisir de renvoyer une copie vide ou l&rsquo;original vide
+    expect(sortByKey([{ a: 1 }], 'score', 'asc')).toEqual([{ a: 1 }]) // choix : on renvoie une copie telle quelle
+  })
+})
+
+// ---------- topNBy ----------
+describe('topNBy', () =&gt; {
+  it('retourne les N meilleurs selon la cl&eacute; (cas nominal)', () =&gt; {
+    // top 2 par score &rarr; Bob (95), Alice (80)
+    const out = topNBy(USERS, 'score', 2)
+    expect(out.map(x =&gt; x.name)).toEqual(['Bob', 'Alice'])
+  })
+
+  it('si N plus grand que la longueur, retourne tout tri&eacute; desc', () =&gt; {
+    const out = topNBy(USERS, 'score', 10)
+    expect(out.map(x =&gt; x.score)).toEqual([95, 80, 70, 50])
+  })
+
+  it('g&egrave;re entr&eacute;es invalides (limite): [] si items invalide, N&lt;=0', () =&gt; {
+    expect(topNBy(null, 'score', 2)).toEqual([])
+    expect(topNBy([], 'score', 2)).toEqual([])
+    expect(topNBy(USERS, 'score', 0)).toEqual([])
+  })
+})</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/javascript");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

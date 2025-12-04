@@ -55,7 +55,12 @@
     "build": "react-scripts build",
     "test": "vitest",
     "test:coverage": "vitest --coverage",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "ct:open": "cypress open --component",
+    "ct:run": "cypress run --component",
+    "e2e:open": "cypress open --e2e",
+    "e2e:run": "cypress run --e2e",
+    "sokrates:report": "node tools/sokrates-runner/index.js"
   },
   "eslintConfig": {
     "extends": [
@@ -85,6 +90,7 @@
     "@vitest/coverage-v8": "^4.0.6",
     "cypress": "^15.6.0",
     "jsdom": "^27.1.0",
+    "sokrates-runner": "file:tools/sokrates-runner",
     "vite": "^7.2.2",
     "vitest": "^4.0.6"
   }

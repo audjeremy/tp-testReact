@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>components/Header.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">components/Header.jsx (<b>23</b> lines of code) (<a href="Header.jsx">raw</a>):</h3>
+<div id="editor">import { Typography, Box, useTheme } from &quot;@mui/material&quot;;
+import { tokens } from &quot;../theme&quot;;
+import React from 'react';
+const Header = ({ title, subtitle }) =&gt; {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+  return (
+    &lt;Box mb=&quot;30px&quot;&gt;
+      &lt;Typography
+        variant=&quot;h2&quot;
+        color={colors.grey[100]}
+        fontWeight=&quot;bold&quot;
+        sx={{ m: &quot;0 0 5px 0&quot; }}
+      &gt;
+        {title}
+      &lt;/Typography&gt;
+      &lt;Typography variant=&quot;h5&quot; color={colors.greenAccent[400]}&gt;
+        {subtitle}
+      &lt;/Typography&gt;
+    &lt;/Box&gt;
+  );
+};
+
+export default Header;
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

@@ -1,0 +1,4 @@
+Path	Lines of Code
+utils/__test__/filters.test.js	57
+utils/__test__/formatters.test.js	43
+utils/__test__/stats.test.js	45

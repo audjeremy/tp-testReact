@@ -1,0 +1,112 @@
+<html>
+<head>
+    <title>scenes/faq/index.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">scenes/faq/index.jsx (<b>83</b> lines of code) (<a href="index.jsx">raw</a>):</h3>
+<div id="editor">import { Box, useTheme } from &quot;@mui/material&quot;;
+import Header from &quot;../../components/Header&quot;;
+import Accordion from &quot;@mui/material/Accordion&quot;;
+import AccordionSummary from &quot;@mui/material/AccordionSummary&quot;;
+import AccordionDetails from &quot;@mui/material/AccordionDetails&quot;;
+import Typography from &quot;@mui/material/Typography&quot;;
+import ExpandMoreIcon from &quot;@mui/icons-material/ExpandMore&quot;;
+import { tokens } from &quot;../../theme&quot;;
+
+const FAQ = () =&gt; {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+  return (
+    &lt;Box m=&quot;20px&quot;&gt;
+      &lt;Header title=&quot;FAQ&quot; subtitle=&quot;Frequently Asked Questions Page&quot; /&gt;
+
+      &lt;Accordion defaultExpanded&gt;
+        &lt;AccordionSummary expandIcon={&lt;ExpandMoreIcon /&gt;}&gt;
+          &lt;Typography color={colors.greenAccent[500]} variant=&quot;h5&quot;&gt;
+            An Important Question
+          &lt;/Typography&gt;
+        &lt;/AccordionSummary&gt;
+        &lt;AccordionDetails&gt;
+          &lt;Typography&gt;
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          &lt;/Typography&gt;
+        &lt;/AccordionDetails&gt;
+      &lt;/Accordion&gt;
+      &lt;Accordion defaultExpanded&gt;
+        &lt;AccordionSummary expandIcon={&lt;ExpandMoreIcon /&gt;}&gt;
+          &lt;Typography color={colors.greenAccent[500]} variant=&quot;h5&quot;&gt;
+            Another Important Question
+          &lt;/Typography&gt;
+        &lt;/AccordionSummary&gt;
+        &lt;AccordionDetails&gt;
+          &lt;Typography&gt;
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          &lt;/Typography&gt;
+        &lt;/AccordionDetails&gt;
+      &lt;/Accordion&gt;
+      &lt;Accordion defaultExpanded&gt;
+        &lt;AccordionSummary expandIcon={&lt;ExpandMoreIcon /&gt;}&gt;
+          &lt;Typography color={colors.greenAccent[500]} variant=&quot;h5&quot;&gt;
+            Your Favorite Question
+          &lt;/Typography&gt;
+        &lt;/AccordionSummary&gt;
+        &lt;AccordionDetails&gt;
+          &lt;Typography&gt;
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          &lt;/Typography&gt;
+        &lt;/AccordionDetails&gt;
+      &lt;/Accordion&gt;
+      &lt;Accordion defaultExpanded&gt;
+        &lt;AccordionSummary expandIcon={&lt;ExpandMoreIcon /&gt;}&gt;
+          &lt;Typography color={colors.greenAccent[500]} variant=&quot;h5&quot;&gt;
+            Some Random Question
+          &lt;/Typography&gt;
+        &lt;/AccordionSummary&gt;
+        &lt;AccordionDetails&gt;
+          &lt;Typography&gt;
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          &lt;/Typography&gt;
+        &lt;/AccordionDetails&gt;
+      &lt;/Accordion&gt;
+      &lt;Accordion defaultExpanded&gt;
+        &lt;AccordionSummary expandIcon={&lt;ExpandMoreIcon /&gt;}&gt;
+          &lt;Typography color={colors.greenAccent[500]} variant=&quot;h5&quot;&gt;
+            The Final Question
+          &lt;/Typography&gt;
+        &lt;/AccordionSummary&gt;
+        &lt;AccordionDetails&gt;
+          &lt;Typography&gt;
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          &lt;/Typography&gt;
+        &lt;/AccordionDetails&gt;
+      &lt;/Accordion&gt;
+    &lt;/Box&gt;
+  );
+};
+
+export default FAQ;
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

@@ -1,0 +1,187 @@
+<head>
+    <style> body {
+        margin: 0;
+    } </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/3d-force-graph"></script>
+</head>
+
+<body>
+<div id="3d-graph"></div>
+
+<script>
+    const gData = {
+  "nodes" : [ {
+    "id" : "[scenes/contacts/index.jsx]",
+    "size" : 2
+  }, {
+    "id" : "[data/contactsData.js]",
+    "size" : 1
+  }, {
+    "id" : "[components/LineChart.jsx]",
+    "size" : 3
+  }, {
+    "id" : "[theme.js]",
+    "size" : 2
+  }, {
+    "id" : "[components/PieChart.jsx]",
+    "size" : 3
+  }, {
+    "id" : "[components/GeographyChart.jsx]",
+    "size" : 3
+  }, {
+    "id" : "[data/teamData.js]",
+    "size" : 1
+  }, {
+    "id" : "[scenes/invoices/index.jsx]",
+    "size" : 2
+  }, {
+    "id" : "[components/BarChart.jsx]",
+    "size" : 3
+  }, {
+    "id" : "[scenes/form/index.jsx]",
+    "size" : 2
+  }, {
+    "id" : "[data/transactionsData.js]",
+    "size" : 2
+  }, {
+    "id" : "[scenes/team/index.jsx]",
+    "size" : 2
+  }, {
+    "id" : "[scenes/faq/index.jsx]",
+    "size" : 2
+  } ],
+  "links" : [ {
+    "source" : "[components/GeographyChart.jsx]",
+    "target" : "[components/PieChart.jsx]",
+    "count" : 58
+  }, {
+    "source" : "[components/PieChart.jsx]",
+    "target" : "[components/GeographyChart.jsx]",
+    "count" : 58
+  }, {
+    "source" : "[components/LineChart.jsx]",
+    "target" : "[components/PieChart.jsx]",
+    "count" : 72
+  }, {
+    "source" : "[components/PieChart.jsx]",
+    "target" : "[components/LineChart.jsx]",
+    "count" : 72
+  }, {
+    "source" : "[components/GeographyChart.jsx]",
+    "target" : "[components/LineChart.jsx]",
+    "count" : 56
+  }, {
+    "source" : "[components/LineChart.jsx]",
+    "target" : "[components/GeographyChart.jsx]",
+    "count" : 56
+  }, {
+    "source" : "[scenes/contacts/index.jsx]",
+    "target" : "[scenes/invoices/index.jsx]",
+    "count" : 92
+  }, {
+    "source" : "[scenes/invoices/index.jsx]",
+    "target" : "[scenes/contacts/index.jsx]",
+    "count" : 92
+  }, {
+    "source" : "[components/BarChart.jsx]",
+    "target" : "[components/GeographyChart.jsx]",
+    "count" : 54
+  }, {
+    "source" : "[components/GeographyChart.jsx]",
+    "target" : "[components/BarChart.jsx]",
+    "count" : 54
+  }, {
+    "source" : "[components/BarChart.jsx]",
+    "target" : "[components/PieChart.jsx]",
+    "count" : 70
+  }, {
+    "source" : "[components/PieChart.jsx]",
+    "target" : "[components/BarChart.jsx]",
+    "count" : 70
+  }, {
+    "source" : "[components/BarChart.jsx]",
+    "target" : "[components/LineChart.jsx]",
+    "count" : 64
+  }, {
+    "source" : "[components/LineChart.jsx]",
+    "target" : "[components/BarChart.jsx]",
+    "count" : 64
+  }, {
+    "source" : "[scenes/contacts/index.jsx]",
+    "target" : "[scenes/team/index.jsx]",
+    "count" : 48
+  }, {
+    "source" : "[scenes/team/index.jsx]",
+    "target" : "[scenes/contacts/index.jsx]",
+    "count" : 48
+  }, {
+    "source" : "[scenes/invoices/index.jsx]",
+    "target" : "[scenes/team/index.jsx]",
+    "count" : 42
+  }, {
+    "source" : "[scenes/team/index.jsx]",
+    "target" : "[scenes/invoices/index.jsx]",
+    "count" : 42
+  }, {
+    "source" : "[theme.js]",
+    "target" : "[theme.js]",
+    "count" : 20
+  }, {
+    "source" : "[theme.js]",
+    "target" : "[theme.js]",
+    "count" : 20
+  }, {
+    "source" : "[scenes/faq/index.jsx]",
+    "target" : "[scenes/faq/index.jsx]",
+    "count" : 84
+  }, {
+    "source" : "[scenes/faq/index.jsx]",
+    "target" : "[scenes/faq/index.jsx]",
+    "count" : 84
+  }, {
+    "source" : "[data/contactsData.js]",
+    "target" : "[data/teamData.js]",
+    "count" : 96
+  }, {
+    "source" : "[data/teamData.js]",
+    "target" : "[data/contactsData.js]",
+    "count" : 96
+  }, {
+    "source" : "[data/transactionsData.js]",
+    "target" : "[data/transactionsData.js]",
+    "count" : 24
+  }, {
+    "source" : "[data/transactionsData.js]",
+    "target" : "[data/transactionsData.js]",
+    "count" : 24
+  }, {
+    "source" : "[scenes/form/index.jsx]",
+    "target" : "[scenes/form/index.jsx]",
+    "count" : 48
+  }, {
+    "source" : "[scenes/form/index.jsx]",
+    "target" : "[scenes/form/index.jsx]",
+    "count" : 48
+  } ]
+}
+
+    const maxNodeSize = gData.nodes.map(n => n.size).reduce((a, b) => Math.max(a, b));
+    const maxCount = gData.links.map(l => l.count).reduce((a, b) => Math.max(a, b));
+
+    gData.links = gData.links.map(l => { return {source: l.target, target: l.source, count: l.count} });
+
+    const Graph = ForceGraph3D()
+    (document.getElementById('3d-graph'))
+        .graphData(gData)
+        .nodeRelSize(4)
+        .nodeVal(n => Math.max(20 * n.size / maxNodeSize, 0.001))
+        .nodeLabel(n => n.id + " (" + n.size + ")")
+        .nodeColor(n => n.id.startsWith("[") ? "skyblue" : "")
+        .linkDirectionalParticles(6)
+        .linkDirectionalParticleSpeed(d => d.count / maxCount * 0.01)
+        .linkOpacity(0.1)
+        .linkWidth(d => 3 * d.count / maxCount + 0.1);
+
+</script>
+</body>

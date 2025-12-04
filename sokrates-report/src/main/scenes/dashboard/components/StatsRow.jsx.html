@@ -1,0 +1,103 @@
+<html>
+<head>
+    <title>scenes/dashboard/components/StatsRow.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">scenes/dashboard/components/StatsRow.jsx (<b>74</b> lines of code) (<a href="StatsRow.jsx">raw</a>):</h3>
+<div id="editor">import { Box } from &quot;@mui/material&quot;;
+import EmailIcon from &quot;@mui/icons-material/Email&quot;;
+import PointOfSaleIcon from &quot;@mui/icons-material/PointOfSale&quot;;
+import PersonAddIcon from &quot;@mui/icons-material/PersonAdd&quot;;
+import TrafficIcon from &quot;@mui/icons-material/Traffic&quot;;
+import StatBox from &quot;../../../components/StatBox&quot;;
+
+const stats = (colors) =&gt; [
+  {
+    key: &quot;emails&quot;,
+    title: &quot;12,361&quot;,
+    subtitle: &quot;Emails Sent&quot;,
+    progress: &quot;0.75&quot;,
+    increase: &quot;+14%&quot;,
+    icon: (
+      &lt;EmailIcon sx={{ color: colors.greenAccent[600], fontSize: &quot;26px&quot; }} /&gt;
+    ),
+  },
+  {
+    key: &quot;sales&quot;,
+    title: &quot;431,225&quot;,
+    subtitle: &quot;Sales Obtained&quot;,
+    progress: &quot;0.50&quot;,
+    increase: &quot;+21%&quot;,
+    icon: (
+      &lt;PointOfSaleIcon
+        sx={{ color: colors.greenAccent[600], fontSize: &quot;26px&quot; }}
+      /&gt;
+    ),
+  },
+  {
+    key: &quot;clients&quot;,
+    title: &quot;32,441&quot;,
+    subtitle: &quot;New Clients&quot;,
+    progress: &quot;0.30&quot;,
+    increase: &quot;+5%&quot;,
+    icon: (
+      &lt;PersonAddIcon
+        sx={{ color: colors.greenAccent[600], fontSize: &quot;26px&quot; }}
+      /&gt;
+    ),
+  },
+  {
+    key: &quot;traffic&quot;,
+    title: &quot;1,325,134&quot;,
+    subtitle: &quot;Traffic Received&quot;,
+    progress: &quot;0.80&quot;,
+    increase: &quot;+43%&quot;,
+    icon: (
+      &lt;TrafficIcon
+        sx={{ color: colors.greenAccent[600], fontSize: &quot;26px&quot; }}
+      /&gt;
+    ),
+  },
+];
+
+const StatsRow = ({ colors }) =&gt;
+  stats(colors).map((stat) =&gt; (
+    &lt;Box
+      key={stat.key}
+      gridColumn=&quot;span 3&quot;
+      backgroundColor={colors.primary[400]}
+      display=&quot;flex&quot;
+      alignItems=&quot;center&quot;
+      justifyContent=&quot;center&quot;
+    &gt;
+      &lt;StatBox
+        title={stat.title}
+        subtitle={stat.subtitle}
+        progress={stat.progress}
+        increase={stat.increase}
+        icon={stat.icon}
+      /&gt;
+    &lt;/Box&gt;
+  ));
+
+export default StatsRow;
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>
