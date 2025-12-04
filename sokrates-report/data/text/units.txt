@@ -1,0 +1,108 @@
+id: 1
+unit: export function sortByKey()
+file: utils/filters.js
+start line: 6
+end line: 26
+size: 18 LOC
+McCabe index: 12
+number of parameters: 3
+
+id: 2
+unit: export function formatCurrency()
+file: utils/formatters.js
+start line: 1
+end line: 17
+size: 15 LOC
+McCabe index: 4
+number of parameters: 3
+
+id: 3
+unit: export function formatName()
+file: utils/formatters.js
+start line: 31
+end line: 44
+size: 14 LOC
+McCabe index: 6
+number of parameters: 2
+
+id: 4
+unit: export function average()
+file: utils/stats.js
+start line: 6
+end line: 17
+size: 12 LOC
+McCabe index: 6
+number of parameters: 1
+
+id: 5
+unit: export function formatPercent()
+file: utils/formatters.js
+start line: 19
+end line: 29
+size: 10 LOC
+McCabe index: 4
+number of parameters: 2
+
+id: 6
+unit: export function topNBy()
+file: utils/filters.js
+start line: 28
+end line: 36
+size: 7 LOC
+McCabe index: 7
+number of parameters: 3
+
+id: 7
+unit: export function growthRate()
+file: utils/stats.js
+start line: 19
+end line: 25
+size: 7 LOC
+McCabe index: 4
+number of parameters: 2
+
+id: 8
+unit: color: tokens()
+file: data/lineData.js
+start line: 7
+end line: 12
+size: 6 LOC
+McCabe index: 1
+number of parameters: 1
+
+id: 9
+unit: color: tokens()
+file: data/lineData.js
+start line: 61
+end line: 66
+size: 6 LOC
+McCabe index: 1
+number of parameters: 1
+
+id: 10
+unit: color: tokens()
+file: data/lineData.js
+start line: 115
+end line: 120
+size: 6 LOC
+McCabe index: 1
+number of parameters: 1
+
+id: 11
+unit: export function filterUsersByRole()
+file: utils/filters.js
+start line: 1
+end line: 4
+size: 4 LOC
+McCabe index: 5
+number of parameters: 2
+
+id: 12
+unit: export function sum()
+file: utils/stats.js
+start line: 1
+end line: 4
+size: 4 LOC
+McCabe index: 4
+number of parameters: 1
+

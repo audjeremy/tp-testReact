@@ -1,0 +1,109 @@
+<html>
+<head>
+    <title>scenes/invoices/index.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">scenes/invoices/index.jsx (<b>80</b> lines of code) (<a href="index.jsx">raw</a>):</h3>
+<div id="editor">import { Box, Typography, useTheme } from &quot;@mui/material&quot;;
+import { DataGrid } from &quot;@mui/x-data-grid&quot;;
+import { tokens } from &quot;../../theme&quot;;
+import { mockDataInvoices } from &quot;../../data/mockData&quot;;
+import Header from &quot;../../components/Header&quot;;
+
+const Invoices = () =&gt; {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+  const columns = [
+    { field: &quot;id&quot;, headerName: &quot;ID&quot; },
+    {
+      field: &quot;name&quot;,
+      headerName: &quot;Name&quot;,
+      flex: 1,
+      cellClassName: &quot;name-column--cell&quot;,
+    },
+    {
+      field: &quot;phone&quot;,
+      headerName: &quot;Phone Number&quot;,
+      flex: 1,
+    },
+    {
+      field: &quot;email&quot;,
+      headerName: &quot;Email&quot;,
+      flex: 1,
+    },
+    {
+      field: &quot;cost&quot;,
+      headerName: &quot;Cost&quot;,
+      flex: 1,
+      renderCell: (params) =&gt; (
+        &lt;Typography color={colors.greenAccent[500]}&gt;
+          ${params.row.cost}
+        &lt;/Typography&gt;
+      ),
+    },
+    {
+      field: &quot;date&quot;,
+      headerName: &quot;Date&quot;,
+      flex: 1,
+    },
+  ];
+
+  return (
+    &lt;Box m=&quot;20px&quot;&gt;
+      &lt;Header title=&quot;INVOICES&quot; subtitle=&quot;List of Invoice Balances&quot; /&gt;
+      &lt;Box
+        m=&quot;40px 0 0 0&quot;
+        height=&quot;75vh&quot;
+        sx={{
+          &quot;&amp; .MuiDataGrid-root&quot;: {
+            border: &quot;none&quot;,
+          },
+          &quot;&amp; .MuiDataGrid-cell&quot;: {
+            borderBottom: &quot;none&quot;,
+          },
+          &quot;&amp; .name-column--cell&quot;: {
+            color: colors.greenAccent[300],
+          },
+          &quot;&amp; .MuiDataGrid-columnHeaders&quot;: {
+            backgroundColor: colors.blueAccent[700],
+            borderBottom: &quot;none&quot;,
+          },
+          &quot;&amp; .MuiDataGrid-virtualScroller&quot;: {
+            backgroundColor: colors.primary[400],
+          },
+          &quot;&amp; .MuiDataGrid-footerContainer&quot;: {
+            borderTop: &quot;none&quot;,
+            backgroundColor: colors.blueAccent[700],
+          },
+          &quot;&amp; .MuiCheckbox-root&quot;: {
+            color: `${colors.greenAccent[200]} !important`,
+          },
+        }}
+      &gt;
+        &lt;DataGrid checkboxSelection rows={mockDataInvoices} columns={columns} /&gt;
+      &lt;/Box&gt;
+    &lt;/Box&gt;
+  );
+};
+
+export default Invoices;
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

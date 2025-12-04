@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>export function formatPercent()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">export function formatPercent()</h3>
+<p style="margin-top: 4px">in <i>utils/formatters.js [19:29]</i></p>
+<ul>
+    <li><b>10</b> lines of code</li>
+    <li><b>4</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="js">
+export function formatPercent(value, { digits = 0 } = {}) {
+  if (typeof value !== 'number' || Number.isNaN(value)) {
+    throw new TypeError('percent must be a number')
+  }
+  if (value &lt; 0 || value &gt; 1) {
+    throw new RangeError('percent must be between 0 and 1')
+  }
+  const pct = (value * 100).toFixed(digits)
+  // On normalise le point d&eacute;cimal et on ajoute le symbole %
+  return `${pct}%`
+}
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

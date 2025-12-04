@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+    .node {
+        cursor: pointer;
+    }
+
+    .node:hover {
+        stroke: #000;
+        stroke-width: 1.5px;
+    }
+
+    .node--leaf {
+        fill: white;
+    }
+
+    .label {
+        font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-anchor: middle;
+        text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+    }
+
+    .label,
+    .node--root,
+    .node--leaf {
+        pointer-events: none;
+    }
+
+</style>
+<svg width="960" height="960"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+    var svg = d3.select("svg"),
+        margin = 20,
+        diameter = +svg.attr("width"),
+        g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+
+    var color = d3.scaleLinear()
+        .domain([-1, 5])
+        .range(["hsl(152,80%,100%)", "hsl(228,30%,40%)"])
+        .interpolate(d3.interpolateHcl);
+
+    var pack = d3.pack()
+        .size([diameter - margin, diameter - margin])
+        .padding(2);
+
+
+    var root = {
+        "name": "cluster",
+        "children": [ {
+  "name" : "scenes",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "form",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "index.jsx",
+      "color" : "",
+      "size" : 153,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "calendar",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "calendar.jsx",
+      "color" : "",
+      "size" : 123,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "invoices",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "index.jsx",
+      "color" : "",
+      "size" : 80,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "faq",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "index.jsx",
+      "color" : "",
+      "size" : 83,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "contacts",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "index.jsx",
+      "color" : "",
+      "size" : 99,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "pie",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "index.jsx",
+      "color" : "",
+      "size" : 14,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "dashboard",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "components",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "TransactionsCard.jsx",
+        "color" : "",
+        "size" : 53,
+        "children" : [ ]
+      }, {
+        "name" : "RevenueChartCard.jsx",
+        "color" : "",
+        "size" : 38,
+        "children" : [ ]
+      }, {
+        "name" : "SalesQuantityCard.jsx",
+        "color" : "",
+        "size" : 21,
+        "children" : [ ]
+      }, {
+        "name" : "CampaignCard.jsx",
+        "color" : "",
+        "size" : 26,
+        "children" : [ ]
+      }, {
+        "name" : "StatsRow.jsx",
+        "color" : "",
+        "size" : 74,
+        "children" : [ ]
+      }, {
+        "name" : "GeographyTrafficCard.jsx",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "index.jsx",
+      "color" : "",
+      "size" : 54,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "team",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "index.jsx",
+      "color" : "",
+      "size" : 134,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "line",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "index.jsx",
+      "color" : "",
+      "size" : 14,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "bar",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "index.jsx",
+      "color" : "",
+      "size" : 14,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "global",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "Sidebar.jsx",
+      "color" : "",
+      "size" : 235,
+      "children" : [ ]
+    }, {
+      "name" : "Topbar.jsx",
+      "color" : "",
+      "size" : 50,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "geography",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "index.jsx",
+      "color" : "",
+      "size" : 21,
+      "children" : [ ]
+    } ]
+  } ]
+}, {
+  "name" : "test",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "renderWithTheme.jsx",
+    "color" : "",
+    "size" : 15,
+    "children" : [ ]
+  }, {
+    "name" : "setupTests.js",
+    "color" : "",
+    "size" : 9,
+    "children" : [ ]
+  } ]
+}, {
+  "name" : "index.js",
+  "color" : "",
+  "size" : 12,
+  "children" : [ ]
+}, {
+  "name" : "theme.js",
+  "color" : "",
+  "size" : 203,
+  "children" : [ ]
+}, {
+  "name" : "utils",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "__test__",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "stats.test.js",
+      "color" : "",
+      "size" : 45,
+      "children" : [ ]
+    }, {
+      "name" : "filters.test.js",
+      "color" : "",
+      "size" : 57,
+      "children" : [ ]
+    }, {
+      "name" : "formatters.test.js",
+      "color" : "",
+      "size" : 43,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "formatters.js",
+    "color" : "",
+    "size" : 39,
+    "children" : [ ]
+  }, {
+    "name" : "filters.js",
+    "color" : "",
+    "size" : 29,
+    "children" : [ ]
+  }, {
+    "name" : "stats.js",
+    "color" : "",
+    "size" : 23,
+    "children" : [ ]
+  } ]
+}, {
+  "name" : "components",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "Header.jsx",
+    "color" : "",
+    "size" : 23,
+    "children" : [ ]
+  }, {
+    "name" : "BarChart.jsx",
+    "color" : "",
+    "size" : 127,
+    "children" : [ ]
+  }, {
+    "name" : "LineChart.jsx",
+    "color" : "",
+    "size" : 114,
+    "children" : [ ]
+  }, {
+    "name" : "__test__",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "Header.test.jsx",
+      "color" : "",
+      "size" : 20,
+      "children" : [ ]
+    }, {
+      "name" : "LineChart.test.jsx",
+      "color" : "",
+      "size" : 33,
+      "children" : [ ]
+    }, {
+      "name" : "StatBox.test.jsx",
+      "color" : "",
+      "size" : 22,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "PieChart.jsx",
+    "color" : "",
+    "size" : 107,
+    "children" : [ ]
+  }, {
+    "name" : "ProgressCircle.jsx",
+    "color" : "",
+    "size" : 20,
+    "children" : [ ]
+  }, {
+    "name" : "GeographyChart.jsx",
+    "color" : "",
+    "size" : 83,
+    "children" : [ ]
+  }, {
+    "name" : "StatBox.jsx",
+    "color" : "",
+    "size" : 39,
+    "children" : [ ]
+  } ]
+}, {
+  "name" : "data",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "geographyData.js",
+    "color" : "",
+    "size" : 686,
+    "children" : [ ]
+  }, {
+    "name" : "teamData.js",
+    "color" : "",
+    "size" : 74,
+    "children" : [ ]
+  }, {
+    "name" : "contactsData.js",
+    "color" : "",
+    "size" : 123,
+    "children" : [ ]
+  }, {
+    "name" : "mockData.js",
+    "color" : "",
+    "size" : 8,
+    "children" : [ ]
+  }, {
+    "name" : "barData.js",
+    "color" : "",
+    "size" : 79,
+    "children" : [ ]
+  }, {
+    "name" : "lineData.js",
+    "color" : "",
+    "size" : 165,
+    "children" : [ ]
+  }, {
+    "name" : "pieData.js",
+    "color" : "",
+    "size" : 32,
+    "children" : [ ]
+  }, {
+    "name" : "transactionsData.js",
+    "color" : "",
+    "size" : 50,
+    "children" : [ ]
+  }, {
+    "name" : "invoicesData.js",
+    "color" : "",
+    "size" : 66,
+    "children" : [ ]
+  } ]
+}, {
+  "name" : "App.js",
+  "color" : "",
+  "size" : 44,
+  "children" : [ ]
+}, {
+  "name" : "validation",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "teamSchemas.js",
+    "color" : "",
+    "size" : 15,
+    "children" : [ ]
+  } ]
+} ]
+    }
+
+    root = d3.hierarchy(root)
+        .sum(function (d) {
+            return d.size;
+        })
+        .sort(function (a, b) {
+            return b.value - a.value;
+        });
+
+    var focus = root,
+        nodes = pack(root).descendants(),
+        view;
+
+    var circle = g.selectAll("circle")
+        .data(nodes)
+        .enter().append("circle")
+        .attr("class", function (d) {
+            return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root";
+        })
+        .style("fill", function (d) {
+            return d.children ? color(d.depth) : (d.data.color ? d.data.color : null);
+        })
+        .on("click", function (d) {
+            if (focus !== d) zoom(d), d3.event.stopPropagation();
+        });
+
+    var text = g.selectAll("text")
+        .data(nodes)
+        .enter().append("text")
+        .attr("class", "label")
+        .style("fill-opacity", function (d) {
+            return d.parent === root ? 1 : 0;
+        })
+        .style("display", function (d) {
+            return d.parent === root ? "inline" : "none";
+        })
+        .text(function (d) {
+            return d.data.name.length > 33 ? (d.data.name.substr(0, 14) + "..." + d.data.name.substr(d.data.name.length - 14))  : d.data.name;
+        });
+
+    var node = g.selectAll("circle,text");
+
+    svg
+        .style("background", color(-1))
+        .on("click", function () {
+            zoom(root);
+        });
+
+    zoomTo([root.x, root.y, root.r * 2 + margin]);
+
+    function zoom(d) {
+        var focus0 = focus;
+        focus = d;
+
+        var transition = d3.transition()
+            .duration(d3.event.altKey ? 7500 : 750)
+            .tween("zoom", function (d) {
+                var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
+                return function (t) {
+                    zoomTo(i(t));
+                };
+            });
+
+        transition.selectAll("text")
+            .filter(function (d) {
+                return d.parent === focus || this.style.display === "inline";
+            })
+            .style("fill-opacity", function (d) {
+                return d.parent === focus ? 1 : 0;
+            })
+            .on("start", function (d) {
+                if (d.parent === focus) this.style.display = "inline";
+            })
+            .on("end", function (d) {
+                if (d.parent !== focus) this.style.display = "none";
+            });
+    }
+
+    function zoomTo(v) {
+        var k = diameter / v[2];
+        view = v;
+        node.attr("transform", function (d) {
+            return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")";
+        });
+        circle.attr("r", function (d) {
+            return d.r * k;
+        });
+    }
+
+</script>

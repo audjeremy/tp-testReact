@@ -1,6 +1,8 @@
 import React from "react";
 import { mount as cypressMount } from "cypress/react";
 import "@testing-library/cypress/add-commands";
+import "./commands";
+// ... éventuellement d’autres imports générés par Cypress
 
 import { BrowserRouter } from "react-router-dom";
 import { ColorModeContext, useMode } from "../../src/theme";

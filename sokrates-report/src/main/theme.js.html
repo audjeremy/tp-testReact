@@ -1,0 +1,240 @@
+<html>
+<head>
+    <title>theme.js</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">theme.js (<b>203</b> lines of code) (<a href="theme.js">raw</a>):</h3>
+<div id="editor">import { createContext, useState, useMemo } from &quot;react&quot;;
+import { createTheme } from &quot;@mui/material/styles&quot;;
+
+// color design tokens export
+export const tokens = (mode) =&gt; ({
+  ...(mode === &quot;dark&quot;
+    ? {
+        grey: {
+          100: &quot;#e0e0e0&quot;,
+          200: &quot;#c2c2c2&quot;,
+          300: &quot;#a3a3a3&quot;,
+          400: &quot;#858585&quot;,
+          500: &quot;#666666&quot;,
+          600: &quot;#525252&quot;,
+          700: &quot;#3d3d3d&quot;,
+          800: &quot;#292929&quot;,
+          900: &quot;#141414&quot;,
+        },
+        primary: {
+          100: &quot;#d0d1d5&quot;,
+          200: &quot;#a1a4ab&quot;,
+          300: &quot;#727681&quot;,
+          400: &quot;#1F2A40&quot;,
+          500: &quot;#141b2d&quot;,
+          600: &quot;#101624&quot;,
+          700: &quot;#0c101b&quot;,
+          800: &quot;#080b12&quot;,
+          900: &quot;#040509&quot;,
+        },
+        greenAccent: {
+          100: &quot;#dbf5ee&quot;,
+          200: &quot;#b7ebde&quot;,
+          300: &quot;#94e2cd&quot;,
+          400: &quot;#70d8bd&quot;,
+          500: &quot;#4cceac&quot;,
+          600: &quot;#3da58a&quot;,
+          700: &quot;#2e7c67&quot;,
+          800: &quot;#1e5245&quot;,
+          900: &quot;#0f2922&quot;,
+        },
+        redAccent: {
+          100: &quot;#f8dcdb&quot;,
+          200: &quot;#f1b9b7&quot;,
+          300: &quot;#e99592&quot;,
+          400: &quot;#e2726e&quot;,
+          500: &quot;#db4f4a&quot;,
+          600: &quot;#af3f3b&quot;,
+          700: &quot;#832f2c&quot;,
+          800: &quot;#58201e&quot;,
+          900: &quot;#2c100f&quot;,
+        },
+        blueAccent: {
+          100: &quot;#e1e2fe&quot;,
+          200: &quot;#c3c6fd&quot;,
+          300: &quot;#a4a9fc&quot;,
+          400: &quot;#868dfb&quot;,
+          500: &quot;#6870fa&quot;,
+          600: &quot;#535ac8&quot;,
+          700: &quot;#3e4396&quot;,
+          800: &quot;#2a2d64&quot;,
+          900: &quot;#151632&quot;,
+        },
+      }
+    : {
+        grey: {
+          100: &quot;#141414&quot;,
+          200: &quot;#292929&quot;,
+          300: &quot;#3d3d3d&quot;,
+          400: &quot;#525252&quot;,
+          500: &quot;#666666&quot;,
+          600: &quot;#858585&quot;,
+          700: &quot;#a3a3a3&quot;,
+          800: &quot;#c2c2c2&quot;,
+          900: &quot;#e0e0e0&quot;,
+        },
+        primary: {
+          100: &quot;#040509&quot;,
+          200: &quot;#080b12&quot;,
+          300: &quot;#0c101b&quot;,
+          400: &quot;#f2f0f0&quot;, // manually changed
+          500: &quot;#141b2d&quot;,
+          600: &quot;#1F2A40&quot;,
+          700: &quot;#727681&quot;,
+          800: &quot;#a1a4ab&quot;,
+          900: &quot;#d0d1d5&quot;,
+        },
+        greenAccent: {
+          100: &quot;#0f2922&quot;,
+          200: &quot;#1e5245&quot;,
+          300: &quot;#2e7c67&quot;,
+          400: &quot;#3da58a&quot;,
+          500: &quot;#4cceac&quot;,
+          600: &quot;#70d8bd&quot;,
+          700: &quot;#94e2cd&quot;,
+          800: &quot;#b7ebde&quot;,
+          900: &quot;#dbf5ee&quot;,
+        },
+        redAccent: {
+          100: &quot;#2c100f&quot;,
+          200: &quot;#58201e&quot;,
+          300: &quot;#832f2c&quot;,
+          400: &quot;#af3f3b&quot;,
+          500: &quot;#db4f4a&quot;,
+          600: &quot;#e2726e&quot;,
+          700: &quot;#e99592&quot;,
+          800: &quot;#f1b9b7&quot;,
+          900: &quot;#f8dcdb&quot;,
+        },
+        blueAccent: {
+          100: &quot;#151632&quot;,
+          200: &quot;#2a2d64&quot;,
+          300: &quot;#3e4396&quot;,
+          400: &quot;#535ac8&quot;,
+          500: &quot;#6870fa&quot;,
+          600: &quot;#868dfb&quot;,
+          700: &quot;#a4a9fc&quot;,
+          800: &quot;#c3c6fd&quot;,
+          900: &quot;#e1e2fe&quot;,
+        },
+      }),
+});
+
+// mui theme settings
+export const themeSettings = (mode) =&gt; {
+  const colors = tokens(mode);
+  return {
+    palette: {
+      mode: mode,
+      ...(mode === &quot;dark&quot;
+        ? {
+            // palette values for dark mode
+            primary: {
+              main: colors.primary[500],
+            },
+            secondary: {
+              main: colors.greenAccent[500],
+            },
+            neutral: {
+              dark: colors.grey[700],
+              main: colors.grey[500],
+              light: colors.grey[100],
+            },
+            background: {
+              default: colors.primary[500],
+            },
+          }
+        : {
+            // palette values for light mode
+            primary: {
+              main: colors.primary[100],
+            },
+            secondary: {
+              main: colors.greenAccent[500],
+            },
+            neutral: {
+              dark: colors.grey[700],
+              main: colors.grey[500],
+              light: colors.grey[100],
+            },
+            background: {
+              default: &quot;#fcfcfc&quot;,
+            },
+          }),
+    },
+    typography: {
+      fontFamily: [&quot;Source Sans Pro&quot;, &quot;sans-serif&quot;].join(&quot;,&quot;),
+      fontSize: 12,
+      h1: {
+        fontFamily: [&quot;Source Sans Pro&quot;, &quot;sans-serif&quot;].join(&quot;,&quot;),
+        fontSize: 40,
+      },
+      h2: {
+        fontFamily: [&quot;Source Sans Pro&quot;, &quot;sans-serif&quot;].join(&quot;,&quot;),
+        fontSize: 32,
+      },
+      h3: {
+        fontFamily: [&quot;Source Sans Pro&quot;, &quot;sans-serif&quot;].join(&quot;,&quot;),
+        fontSize: 24,
+      },
+      h4: {
+        fontFamily: [&quot;Source Sans Pro&quot;, &quot;sans-serif&quot;].join(&quot;,&quot;),
+        fontSize: 20,
+      },
+      h5: {
+        fontFamily: [&quot;Source Sans Pro&quot;, &quot;sans-serif&quot;].join(&quot;,&quot;),
+        fontSize: 16,
+      },
+      h6: {
+        fontFamily: [&quot;Source Sans Pro&quot;, &quot;sans-serif&quot;].join(&quot;,&quot;),
+        fontSize: 14,
+      },
+    },
+  };
+};
+
+// context for color mode
+export const ColorModeContext = createContext({
+  toggleColorMode: () =&gt; {},
+});
+
+export const useMode = () =&gt; {
+  const [mode, setMode] = useState(&quot;dark&quot;);
+
+  const colorMode = useMemo(
+    () =&gt; ({
+      toggleColorMode: () =&gt;
+        setMode((prev) =&gt; (prev === &quot;light&quot; ? &quot;dark&quot; : &quot;light&quot;)),
+    }),
+    []
+  );
+
+  const theme = useMemo(() =&gt; createTheme(themeSettings(mode)), [mode]);
+  return [theme, colorMode];
+};
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/javascript");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

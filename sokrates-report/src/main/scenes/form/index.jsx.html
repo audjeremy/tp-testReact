@@ -1,0 +1,186 @@
+<html>
+<head>
+    <title>scenes/form/index.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">scenes/form/index.jsx (<b>153</b> lines of code) (<a href="index.jsx">raw</a>):</h3>
+<div id="editor">import { Box, Button, TextField } from &quot;@mui/material&quot;;
+import { Formik } from &quot;formik&quot;;
+import * as yup from &quot;yup&quot;;
+import useMediaQuery from &quot;@mui/material/useMediaQuery&quot;;
+import Header from &quot;../../components/Header&quot;;
+
+const Form = () =&gt; {
+  const isNonMobile = useMediaQuery(&quot;(min-width:600px)&quot;);
+
+  const handleFormSubmit = (values) =&gt; {
+    console.log(values);
+  };
+
+  return (
+    &lt;Box m=&quot;20px&quot;&gt;
+      &lt;Header title=&quot;CREATE USER&quot; subtitle=&quot;Create a New User Profile&quot; /&gt;
+
+      &lt;Formik
+        onSubmit={handleFormSubmit}
+        initialValues={initialValues}
+        validationSchema={checkoutSchema}
+      &gt;
+        {({
+          values,
+          errors,
+          touched,
+          handleBlur,
+          handleChange,
+          handleSubmit,
+        }) =&gt; (
+          &lt;form onSubmit={handleSubmit}&gt;
+            &lt;Box
+              display=&quot;grid&quot;
+              gap=&quot;30px&quot;
+              gridTemplateColumns=&quot;repeat(4, minmax(0, 1fr))&quot;
+              sx={{
+                &quot;&amp; &gt; div&quot;: { gridColumn: isNonMobile ? undefined : &quot;span 4&quot; },
+              }}
+            &gt;
+              &lt;TextField
+                fullWidth
+                variant=&quot;filled&quot;
+                type=&quot;text&quot;
+                label=&quot;First Name&quot;
+                onBlur={handleBlur}
+                onChange={handleChange}
+                value={values.firstName}
+                name=&quot;firstName&quot;
+                inputProps={{ &quot;data-testid&quot;: &quot;first-name-input&quot; }}
+                error={!!touched.firstName &amp;&amp; !!errors.firstName}
+                helperText={touched.firstName &amp;&amp; errors.firstName}
+                sx={{ gridColumn: &quot;span 2&quot; }}
+              /&gt;
+              &lt;TextField
+                fullWidth
+                variant=&quot;filled&quot;
+                type=&quot;text&quot;
+                label=&quot;Last Name&quot;
+                onBlur={handleBlur}
+                onChange={handleChange}
+                value={values.lastName}
+                name=&quot;lastName&quot;
+                error={!!touched.lastName &amp;&amp; !!errors.lastName}
+                helperText={touched.lastName &amp;&amp; errors.lastName}
+                sx={{ gridColumn: &quot;span 2&quot; }}
+              /&gt;
+              &lt;TextField
+                fullWidth
+                variant=&quot;filled&quot;
+                type=&quot;text&quot;
+                label=&quot;Email&quot;
+                onBlur={handleBlur}
+                onChange={handleChange}
+                value={values.email}
+                name=&quot;email&quot;
+                error={!!touched.email &amp;&amp; !!errors.email}
+                helperText={touched.email &amp;&amp; errors.email}
+                sx={{ gridColumn: &quot;span 4&quot; }}
+              /&gt;
+              &lt;TextField
+                fullWidth
+                variant=&quot;filled&quot;
+                type=&quot;text&quot;
+                label=&quot;Contact Number&quot;
+                onBlur={handleBlur}
+                onChange={handleChange}
+                value={values.contact}
+                name=&quot;contact&quot;
+                error={!!touched.contact &amp;&amp; !!errors.contact}
+                helperText={touched.contact &amp;&amp; errors.contact}
+                sx={{ gridColumn: &quot;span 4&quot; }}
+              /&gt;
+              &lt;TextField
+                fullWidth
+                variant=&quot;filled&quot;
+                type=&quot;text&quot;
+                label=&quot;Address 1&quot;
+                onBlur={handleBlur}
+                onChange={handleChange}
+                value={values.address1}
+                name=&quot;address1&quot;
+                error={!!touched.address1 &amp;&amp; !!errors.address1}
+                helperText={touched.address1 &amp;&amp; errors.address1}
+                sx={{ gridColumn: &quot;span 4&quot; }}
+              /&gt;
+              &lt;TextField
+                fullWidth
+                variant=&quot;filled&quot;
+                type=&quot;text&quot;
+                label=&quot;Address 2&quot;
+                onBlur={handleBlur}
+                onChange={handleChange}
+                value={values.address2}
+                name=&quot;address2&quot;
+                error={!!touched.address2 &amp;&amp; !!errors.address2}
+                helperText={touched.address2 &amp;&amp; errors.address2}
+                sx={{ gridColumn: &quot;span 4&quot; }}
+              /&gt;
+            &lt;/Box&gt;
+            &lt;Box display=&quot;flex&quot; justifyContent=&quot;end&quot; mt=&quot;20px&quot;&gt;
+              &lt;Button
+                type=&quot;submit&quot;
+                color=&quot;secondary&quot;
+                variant=&quot;contained&quot;
+                data-testid=&quot;submit-profile-form&quot;
+              &gt;
+                Create New User
+              &lt;/Button&gt;
+            &lt;/Box&gt;
+          &lt;/form&gt;
+        )}
+      &lt;/Formik&gt;
+    &lt;/Box&gt;
+  );
+};
+
+const phoneRegExp =
+  /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/;
+
+const checkoutSchema = yup.object().shape({
+  firstName: yup.string().required(&quot;required&quot;),
+  lastName: yup.string().required(&quot;required&quot;),
+  email: yup.string().email(&quot;invalid email&quot;).required(&quot;required&quot;),
+  contact: yup
+    .string()
+    .matches(phoneRegExp, &quot;Phone number is not valid&quot;)
+    .required(&quot;required&quot;),
+  address1: yup.string().required(&quot;required&quot;),
+  address2: yup.string().required(&quot;required&quot;),
+});
+const initialValues = {
+  firstName: &quot;&quot;,
+  lastName: &quot;&quot;,
+  email: &quot;&quot;,
+  contact: &quot;&quot;,
+  address1: &quot;&quot;,
+  address2: &quot;&quot;,
+};
+
+export default Form;
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

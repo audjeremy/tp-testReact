@@ -1,0 +1,135 @@
+<html>
+<head>
+    <title>components/PieChart.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">components/PieChart.jsx (<b>107</b> lines of code) (<a href="PieChart.jsx">raw</a>):</h3>
+<div id="editor">import { ResponsivePie } from &quot;@nivo/pie&quot;;
+import { tokens } from &quot;../theme&quot;;
+import { useTheme } from &quot;@mui/material&quot;;
+import { mockPieData as data } from &quot;../data/mockData&quot;;
+
+const PieChart = () =&gt; {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+  return (
+    &lt;ResponsivePie
+      data={data}
+      theme={{
+        axis: {
+          domain: {
+            line: {
+              stroke: colors.grey[100],
+            },
+          },
+          legend: {
+            text: {
+              fill: colors.grey[100],
+            },
+          },
+          ticks: {
+            line: {
+              stroke: colors.grey[100],
+              strokeWidth: 1,
+            },
+            text: {
+              fill: colors.grey[100],
+            },
+          },
+        },
+        legends: {
+          text: {
+            fill: colors.grey[100],
+          },
+        },
+      }}
+      margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+      innerRadius={0.5}
+      padAngle={0.7}
+      cornerRadius={3}
+      activeOuterRadiusOffset={8}
+      borderColor={{
+        from: &quot;color&quot;,
+        modifiers: [[&quot;darker&quot;, 0.2]],
+      }}
+      arcLinkLabelsSkipAngle={10}
+      arcLinkLabelsTextColor={colors.grey[100]}
+      arcLinkLabelsThickness={2}
+      arcLinkLabelsColor={{ from: &quot;color&quot; }}
+      enableArcLabels={false}
+      arcLabelsRadiusOffset={0.4}
+      arcLabelsSkipAngle={7}
+      arcLabelsTextColor={{
+        from: &quot;color&quot;,
+        modifiers: [[&quot;darker&quot;, 2]],
+      }}
+      defs={[
+        {
+          id: &quot;dots&quot;,
+          type: &quot;patternDots&quot;,
+          background: &quot;inherit&quot;,
+          color: &quot;rgba(255, 255, 255, 0.3)&quot;,
+          size: 4,
+          padding: 1,
+          stagger: true,
+        },
+        {
+          id: &quot;lines&quot;,
+          type: &quot;patternLines&quot;,
+          background: &quot;inherit&quot;,
+          color: &quot;rgba(255, 255, 255, 0.3)&quot;,
+          rotation: -45,
+          lineWidth: 6,
+          spacing: 10,
+        },
+      ]}
+      legends={[
+        {
+          anchor: &quot;bottom&quot;,
+          direction: &quot;row&quot;,
+          justify: false,
+          translateX: 0,
+          translateY: 56,
+          itemsSpacing: 0,
+          itemWidth: 100,
+          itemHeight: 18,
+          itemTextColor: &quot;#999&quot;,
+          itemDirection: &quot;left-to-right&quot;,
+          itemOpacity: 1,
+          symbolSize: 18,
+          symbolShape: &quot;circle&quot;,
+          effects: [
+            {
+              on: &quot;hover&quot;,
+              style: {
+                itemTextColor: &quot;#000&quot;,
+              },
+            },
+          ],
+        },
+      ]}
+    /&gt;
+  );
+};
+
+export default PieChart;
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

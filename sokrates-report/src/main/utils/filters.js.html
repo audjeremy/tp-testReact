@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>utils/filters.js</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">utils/filters.js (<b>29</b> lines of code) (<a href="filters.js">raw</a>):</h3>
+<div id="editor">export function filterUsersByRole(list, role) {
+  if (!Array.isArray(list) || typeof role !== 'string' || !role.trim()) return []
+  return list.filter(item =&gt; item &amp;&amp; item.role === role)
+}
+
+export function sortByKey(items, key, dir = 'asc') {
+  if (!Array.isArray(items)) return []
+  if (!items.length) return []
+  if (typeof key !== 'string' || !key) return [...items] // renvoie une copie telle quelle
+
+  const sign = dir === 'desc' ? -1 : 1
+  // on copie pour ne pas muter l&rsquo;original
+  const copy = [...items]
+  copy.sort((a, b) =&gt; {
+    const va = a?.[key]
+    const vb = b?.[key]
+    // si la cl&eacute; n'existe pas, on consid&egrave;re &eacute;galit&eacute;
+    if (va == null &amp;&amp; vb == null) return 0
+    if (va == null) return 1  // valeurs nulles en bas
+    if (vb == null) return -1
+    if (va &lt; vb) return -1 * sign
+    if (va &gt; vb) return 1 * sign
+    return 0
+  })
+  return copy
+}
+
+export function topNBy(items, key, n) {
+  if (!Array.isArray(items) || !items.length) return []
+  if (typeof n !== 'number' || n &lt;= 0) return []
+  if (typeof key !== 'string' || !key) return []
+
+  // tri desc par d&eacute;faut pour &quot;top&quot;
+  const sorted = sortByKey(items, key, 'desc')
+  return sorted.slice(0, n)
+}</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/javascript");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

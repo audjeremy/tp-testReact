@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>components/__test__/StatBox.test.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">components/__test__/StatBox.test.jsx (<b>22</b> lines of code) (<a href="StatBox.test.jsx">raw</a>):</h3>
+<div id="editor">// src/components/__test__/StatBox.test.jsx
+import React from 'react'
+import { describe, it, expect } from 'vitest'
+import { screen } from '@testing-library/react'
+import { renderWithTheme } from '../../test/renderWithTheme.jsx'
+import StatBox from '../StatBox'
+
+describe('StatBox (composant React)', () =&gt; {
+  it('rend title, subtitle et increase pass&eacute;s en props', () =&gt; {
+    const props = {
+      title: 'Revenue',
+      // value n&rsquo;est pas rendu en texte par ce StatBox
+      value: '12,345',
+      increase: '+12%',
+      subtitle: 'Depuis 30 jours',
+    }
+
+    renderWithTheme(&lt;StatBox {...props} /&gt;)
+
+    expect(screen.getByText('Revenue')).toBeInTheDocument()
+    expect(screen.getByText('+12%')).toBeInTheDocument()
+    expect(screen.getByText(/Depuis 30 jours/i)).toBeInTheDocument()
+    // on ne v&eacute;rifie PAS la valeur brute, car elle n&rsquo;est pas affich&eacute;e en clair
+  })
+})</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>components/__test__/Header.test.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">components/__test__/Header.test.jsx (<b>20</b> lines of code) (<a href="Header.test.jsx">raw</a>):</h3>
+<div id="editor">// src/components/__test__/Header.test.jsx
+import React from 'react'
+import { describe, it, expect } from 'vitest'
+import { screen } from '@testing-library/react'
+import { renderWithTheme } from '../../test/renderWithTheme.jsx'
+import Header from '../Header'
+
+describe('Header (composant React)', () =&gt; {
+  it('rend des titres (headings) visibles', () =&gt; {
+    // Arrange + Act
+    renderWithTheme(&lt;Header /&gt;)
+
+    // Assert: il y a au moins un heading rendu par MUI Typography
+    const headings = screen.getAllByRole('heading')
+    expect(headings.length).toBeGreaterThanOrEqual(1)
+  })
+
+  it('le premier heading est pr&eacute;sent dans le document', () =&gt; {
+    renderWithTheme(&lt;Header /&gt;)
+
+    const [firstHeading] = screen.getAllByRole('heading')
+    expect(firstHeading).toBeInTheDocument()
+  })
+})</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

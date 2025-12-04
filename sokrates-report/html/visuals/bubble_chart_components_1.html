@@ -1,0 +1,195 @@
+<!--
+  ~ Copyright (c) 2021 Željko Obrenović. All rights reserved.
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>A bubble chart view on componets</title>
+    <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+
+    <style type="text/css">
+        svg {
+            font: 14px sans-serif;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+
+    var dataset = {
+        "name": "cluster",
+        "children": [ {
+  "name" : "scenes/form",
+  "color" : "",
+  "size" : 153,
+  "children" : [ ]
+}, {
+  "name" : "scenes/calendar",
+  "color" : "",
+  "size" : 123,
+  "children" : [ ]
+}, {
+  "name" : "scenes/invoices",
+  "color" : "",
+  "size" : 80,
+  "children" : [ ]
+}, {
+  "name" : "scenes/faq",
+  "color" : "",
+  "size" : 83,
+  "children" : [ ]
+}, {
+  "name" : "scenes/contacts",
+  "color" : "",
+  "size" : 99,
+  "children" : [ ]
+}, {
+  "name" : "scenes/pie",
+  "color" : "",
+  "size" : 14,
+  "children" : [ ]
+}, {
+  "name" : "scenes/dashboard/components",
+  "color" : "",
+  "size" : 230,
+  "children" : [ ]
+}, {
+  "name" : "scenes/dashboard",
+  "color" : "",
+  "size" : 54,
+  "children" : [ ]
+}, {
+  "name" : "scenes/team",
+  "color" : "",
+  "size" : 134,
+  "children" : [ ]
+}, {
+  "name" : "scenes/line",
+  "color" : "",
+  "size" : 14,
+  "children" : [ ]
+}, {
+  "name" : "scenes/bar",
+  "color" : "",
+  "size" : 14,
+  "children" : [ ]
+}, {
+  "name" : "scenes/global",
+  "color" : "",
+  "size" : 285,
+  "children" : [ ]
+}, {
+  "name" : "scenes/geography",
+  "color" : "",
+  "size" : 21,
+  "children" : [ ]
+}, {
+  "name" : "test",
+  "color" : "",
+  "size" : 24,
+  "children" : [ ]
+}, {
+  "name" : "ROOT",
+  "color" : "",
+  "size" : 259,
+  "children" : [ ]
+}, {
+  "name" : "utils/__test__",
+  "color" : "",
+  "size" : 145,
+  "children" : [ ]
+}, {
+  "name" : "utils",
+  "color" : "",
+  "size" : 91,
+  "children" : [ ]
+}, {
+  "name" : "components",
+  "color" : "",
+  "size" : 513,
+  "children" : [ ]
+}, {
+  "name" : "components/__test__",
+  "color" : "",
+  "size" : 75,
+  "children" : [ ]
+}, {
+  "name" : "data",
+  "color" : "",
+  "size" : 1283,
+  "children" : [ ]
+}, {
+  "name" : "validation",
+  "color" : "",
+  "size" : 15,
+  "children" : [ ]
+} ]
+    }
+
+    var diameter = 800;
+    var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+    var bubble = d3.pack(dataset)
+        .size([diameter, diameter])
+        .padding(1.5);
+
+    var svg = d3.select("body")
+        .append("svg")
+        .attr("width", diameter)
+        .attr("height", diameter)
+        .attr("class", "bubble");
+
+    var nodes = d3.hierarchy(dataset)
+        .sum(function(d) { return d.size; });
+
+    var node = svg.selectAll(".node")
+        .data(bubble(nodes).descendants())
+        .enter()
+        .filter(function(d){
+            return  !d.children
+        })
+        .append("g")
+        .attr("class", "node")
+        .attr("transform", function(d) {
+            return "translate(" + d.x + "," + d.y + ")";
+        });
+
+    node.append("title")
+        .text(function(d) {
+            return d.data.name + ": " + d.data.size;
+        });
+
+    node.append("circle")
+        .attr("r", function(d) {
+            return d.r;
+        })
+        .style("fill", function(d,i) {
+            return "rgb(192, 222, 237)";
+        });
+
+    node.append("text")
+        .attr("dy", ".2em")
+        .style("text-anchor", "middle")
+        .text(function(d) {
+            return d.data.name.substring(0, d.r / 3);
+        })
+        .attr("font-family", "sans-serif")
+        .attr("fill", "black");
+
+    node.append("text")
+        .attr("dy", "1.3em")
+        .style("text-anchor", "middle")
+        .text(function(d) {
+            return d.data.Count;
+        })
+        .attr("font-family",  "Gill Sans", "Gill Sans MT")
+        .attr("fill", "white");
+
+    d3.select(self.frameElement)
+        .style("height", diameter + "px");
+
+</script>
+</body>
+</html>

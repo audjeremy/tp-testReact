@@ -1,0 +1,759 @@
+<head>
+    <style> body {
+        margin: 0;
+    } </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/3d-force-graph"></script>
+</head>
+
+<body>
+<div id="3d-graph"></div>
+
+<script>
+    const gData = {
+  "nodes" : [ {
+    "id" : "[data/contactsData.js]",
+    "size" : 8
+  }, {
+    "id" : "[theme.js]",
+    "size" : 2
+  }, {
+    "id" : "[components/GeographyChart.jsx]",
+    "size" : 3
+  }, {
+    "id" : "[components/BarChart.jsx]",
+    "size" : 5
+  }, {
+    "id" : "[scenes/faq/index.jsx]",
+    "size" : 12
+  }, {
+    "id" : "[components/LineChart.jsx]",
+    "size" : 5
+  }, {
+    "id" : "[components/PieChart.jsx]",
+    "size" : 5
+  }, {
+    "id" : "duplicate11",
+    "size" : 2
+  }, {
+    "id" : "duplicate10",
+    "size" : 2
+  }, {
+    "id" : "duplicate13",
+    "size" : 2
+  }, {
+    "id" : "[data/teamData.js]",
+    "size" : 8
+  }, {
+    "id" : "duplicate12",
+    "size" : 2
+  }, {
+    "id" : "duplicate15",
+    "size" : 2
+  }, {
+    "id" : "[scenes/invoices/index.jsx]",
+    "size" : 5
+  }, {
+    "id" : "duplicate14",
+    "size" : 2
+  }, {
+    "id" : "duplicate17",
+    "size" : 2
+  }, {
+    "id" : "duplicate16",
+    "size" : 2
+  }, {
+    "id" : "duplicate19",
+    "size" : 2
+  }, {
+    "id" : "duplicate18",
+    "size" : 2
+  }, {
+    "id" : "duplicate20",
+    "size" : 2
+  }, {
+    "id" : "duplicate22",
+    "size" : 2
+  }, {
+    "id" : "duplicate21",
+    "size" : 2
+  }, {
+    "id" : "duplicate24",
+    "size" : 2
+  }, {
+    "id" : "duplicate23",
+    "size" : 2
+  }, {
+    "id" : "duplicate26",
+    "size" : 2
+  }, {
+    "id" : "duplicate25",
+    "size" : 2
+  }, {
+    "id" : "duplicate28",
+    "size" : 2
+  }, {
+    "id" : "duplicate27",
+    "size" : 2
+  }, {
+    "id" : "duplicate29",
+    "size" : 2
+  }, {
+    "id" : "[scenes/form/index.jsx]",
+    "size" : 8
+  }, {
+    "id" : "[data/transactionsData.js]",
+    "size" : 4
+  }, {
+    "id" : "[scenes/contacts/index.jsx]",
+    "size" : 4
+  }, {
+    "id" : "duplicate4",
+    "size" : 2
+  }, {
+    "id" : "duplicate3",
+    "size" : 2
+  }, {
+    "id" : "duplicate6",
+    "size" : 2
+  }, {
+    "id" : "duplicate5",
+    "size" : 2
+  }, {
+    "id" : "duplicate8",
+    "size" : 2
+  }, {
+    "id" : "duplicate7",
+    "size" : 2
+  }, {
+    "id" : "duplicate9",
+    "size" : 2
+  }, {
+    "id" : "duplicate31",
+    "size" : 2
+  }, {
+    "id" : "duplicate30",
+    "size" : 2
+  }, {
+    "id" : "duplicate33",
+    "size" : 2
+  }, {
+    "id" : "duplicate32",
+    "size" : 2
+  }, {
+    "id" : "duplicate35",
+    "size" : 2
+  }, {
+    "id" : "duplicate34",
+    "size" : 2
+  }, {
+    "id" : "duplicate2",
+    "size" : 2
+  }, {
+    "id" : "duplicate1",
+    "size" : 2
+  }, {
+    "id" : "duplicate36",
+    "size" : 2
+  }, {
+    "id" : "[scenes/team/index.jsx]",
+    "size" : 3
+  } ],
+  "links" : [ {
+    "source" : "[components/GeographyChart.jsx]",
+    "target" : "duplicate1",
+    "count" : 1
+  }, {
+    "source" : "duplicate1",
+    "target" : "[components/GeographyChart.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[components/PieChart.jsx]",
+    "target" : "duplicate1",
+    "count" : 1
+  }, {
+    "source" : "duplicate1",
+    "target" : "[components/PieChart.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[components/LineChart.jsx]",
+    "target" : "duplicate2",
+    "count" : 1
+  }, {
+    "source" : "duplicate2",
+    "target" : "[components/LineChart.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[components/PieChart.jsx]",
+    "target" : "duplicate2",
+    "count" : 1
+  }, {
+    "source" : "duplicate2",
+    "target" : "[components/PieChart.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[components/GeographyChart.jsx]",
+    "target" : "duplicate3",
+    "count" : 1
+  }, {
+    "source" : "duplicate3",
+    "target" : "[components/GeographyChart.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[components/LineChart.jsx]",
+    "target" : "duplicate3",
+    "count" : 1
+  }, {
+    "source" : "duplicate3",
+    "target" : "[components/LineChart.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/contacts/index.jsx]",
+    "target" : "duplicate4",
+    "count" : 1
+  }, {
+    "source" : "duplicate4",
+    "target" : "[scenes/contacts/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/invoices/index.jsx]",
+    "target" : "duplicate4",
+    "count" : 1
+  }, {
+    "source" : "duplicate4",
+    "target" : "[scenes/invoices/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[components/BarChart.jsx]",
+    "target" : "duplicate5",
+    "count" : 1
+  }, {
+    "source" : "duplicate5",
+    "target" : "[components/BarChart.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[components/GeographyChart.jsx]",
+    "target" : "duplicate5",
+    "count" : 1
+  }, {
+    "source" : "duplicate5",
+    "target" : "[components/GeographyChart.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[components/BarChart.jsx]",
+    "target" : "duplicate6",
+    "count" : 1
+  }, {
+    "source" : "duplicate6",
+    "target" : "[components/BarChart.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[components/PieChart.jsx]",
+    "target" : "duplicate6",
+    "count" : 1
+  }, {
+    "source" : "duplicate6",
+    "target" : "[components/PieChart.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[components/BarChart.jsx]",
+    "target" : "duplicate7",
+    "count" : 1
+  }, {
+    "source" : "duplicate7",
+    "target" : "[components/BarChart.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[components/LineChart.jsx]",
+    "target" : "duplicate7",
+    "count" : 1
+  }, {
+    "source" : "duplicate7",
+    "target" : "[components/LineChart.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/contacts/index.jsx]",
+    "target" : "duplicate8",
+    "count" : 1
+  }, {
+    "source" : "duplicate8",
+    "target" : "[scenes/contacts/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/team/index.jsx]",
+    "target" : "duplicate8",
+    "count" : 1
+  }, {
+    "source" : "duplicate8",
+    "target" : "[scenes/team/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/contacts/index.jsx]",
+    "target" : "duplicate9",
+    "count" : 1
+  }, {
+    "source" : "duplicate9",
+    "target" : "[scenes/contacts/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/invoices/index.jsx]",
+    "target" : "duplicate9",
+    "count" : 1
+  }, {
+    "source" : "duplicate9",
+    "target" : "[scenes/invoices/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/invoices/index.jsx]",
+    "target" : "duplicate10",
+    "count" : 1
+  }, {
+    "source" : "duplicate10",
+    "target" : "[scenes/invoices/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/team/index.jsx]",
+    "target" : "duplicate10",
+    "count" : 1
+  }, {
+    "source" : "duplicate10",
+    "target" : "[scenes/team/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[theme.js]",
+    "target" : "duplicate11",
+    "count" : 1
+  }, {
+    "source" : "duplicate11",
+    "target" : "[theme.js]",
+    "count" : 1
+  }, {
+    "source" : "[theme.js]",
+    "target" : "duplicate11",
+    "count" : 1
+  }, {
+    "source" : "duplicate11",
+    "target" : "[theme.js]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/invoices/index.jsx]",
+    "target" : "duplicate12",
+    "count" : 1
+  }, {
+    "source" : "duplicate12",
+    "target" : "[scenes/invoices/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/team/index.jsx]",
+    "target" : "duplicate12",
+    "count" : 1
+  }, {
+    "source" : "duplicate12",
+    "target" : "[scenes/team/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[components/LineChart.jsx]",
+    "target" : "duplicate13",
+    "count" : 1
+  }, {
+    "source" : "duplicate13",
+    "target" : "[components/LineChart.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[components/PieChart.jsx]",
+    "target" : "duplicate13",
+    "count" : 1
+  }, {
+    "source" : "duplicate13",
+    "target" : "[components/PieChart.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[components/BarChart.jsx]",
+    "target" : "duplicate14",
+    "count" : 1
+  }, {
+    "source" : "duplicate14",
+    "target" : "[components/BarChart.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[components/PieChart.jsx]",
+    "target" : "duplicate14",
+    "count" : 1
+  }, {
+    "source" : "duplicate14",
+    "target" : "[components/PieChart.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/faq/index.jsx]",
+    "target" : "duplicate15",
+    "count" : 1
+  }, {
+    "source" : "duplicate15",
+    "target" : "[scenes/faq/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/faq/index.jsx]",
+    "target" : "duplicate15",
+    "count" : 1
+  }, {
+    "source" : "duplicate15",
+    "target" : "[scenes/faq/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/faq/index.jsx]",
+    "target" : "duplicate16",
+    "count" : 1
+  }, {
+    "source" : "duplicate16",
+    "target" : "[scenes/faq/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/faq/index.jsx]",
+    "target" : "duplicate16",
+    "count" : 1
+  }, {
+    "source" : "duplicate16",
+    "target" : "[scenes/faq/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/faq/index.jsx]",
+    "target" : "duplicate17",
+    "count" : 1
+  }, {
+    "source" : "duplicate17",
+    "target" : "[scenes/faq/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/faq/index.jsx]",
+    "target" : "duplicate17",
+    "count" : 1
+  }, {
+    "source" : "duplicate17",
+    "target" : "[scenes/faq/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/faq/index.jsx]",
+    "target" : "duplicate18",
+    "count" : 1
+  }, {
+    "source" : "duplicate18",
+    "target" : "[scenes/faq/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/faq/index.jsx]",
+    "target" : "duplicate18",
+    "count" : 1
+  }, {
+    "source" : "duplicate18",
+    "target" : "[scenes/faq/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/contacts/index.jsx]",
+    "target" : "duplicate19",
+    "count" : 1
+  }, {
+    "source" : "duplicate19",
+    "target" : "[scenes/contacts/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/invoices/index.jsx]",
+    "target" : "duplicate19",
+    "count" : 1
+  }, {
+    "source" : "duplicate19",
+    "target" : "[scenes/invoices/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/faq/index.jsx]",
+    "target" : "duplicate20",
+    "count" : 1
+  }, {
+    "source" : "duplicate20",
+    "target" : "[scenes/faq/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/faq/index.jsx]",
+    "target" : "duplicate20",
+    "count" : 1
+  }, {
+    "source" : "duplicate20",
+    "target" : "[scenes/faq/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/faq/index.jsx]",
+    "target" : "duplicate21",
+    "count" : 1
+  }, {
+    "source" : "duplicate21",
+    "target" : "[scenes/faq/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/faq/index.jsx]",
+    "target" : "duplicate21",
+    "count" : 1
+  }, {
+    "source" : "duplicate21",
+    "target" : "[scenes/faq/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[data/contactsData.js]",
+    "target" : "duplicate22",
+    "count" : 1
+  }, {
+    "source" : "duplicate22",
+    "target" : "[data/contactsData.js]",
+    "count" : 1
+  }, {
+    "source" : "[data/teamData.js]",
+    "target" : "duplicate22",
+    "count" : 1
+  }, {
+    "source" : "duplicate22",
+    "target" : "[data/teamData.js]",
+    "count" : 1
+  }, {
+    "source" : "[data/contactsData.js]",
+    "target" : "duplicate23",
+    "count" : 1
+  }, {
+    "source" : "duplicate23",
+    "target" : "[data/contactsData.js]",
+    "count" : 1
+  }, {
+    "source" : "[data/teamData.js]",
+    "target" : "duplicate23",
+    "count" : 1
+  }, {
+    "source" : "duplicate23",
+    "target" : "[data/teamData.js]",
+    "count" : 1
+  }, {
+    "source" : "[components/BarChart.jsx]",
+    "target" : "duplicate24",
+    "count" : 1
+  }, {
+    "source" : "duplicate24",
+    "target" : "[components/BarChart.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[components/LineChart.jsx]",
+    "target" : "duplicate24",
+    "count" : 1
+  }, {
+    "source" : "duplicate24",
+    "target" : "[components/LineChart.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[data/transactionsData.js]",
+    "target" : "duplicate25",
+    "count" : 1
+  }, {
+    "source" : "duplicate25",
+    "target" : "[data/transactionsData.js]",
+    "count" : 1
+  }, {
+    "source" : "[data/transactionsData.js]",
+    "target" : "duplicate25",
+    "count" : 1
+  }, {
+    "source" : "duplicate25",
+    "target" : "[data/transactionsData.js]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/form/index.jsx]",
+    "target" : "duplicate26",
+    "count" : 1
+  }, {
+    "source" : "duplicate26",
+    "target" : "[scenes/form/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/form/index.jsx]",
+    "target" : "duplicate26",
+    "count" : 1
+  }, {
+    "source" : "duplicate26",
+    "target" : "[scenes/form/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[data/contactsData.js]",
+    "target" : "duplicate27",
+    "count" : 1
+  }, {
+    "source" : "duplicate27",
+    "target" : "[data/contactsData.js]",
+    "count" : 1
+  }, {
+    "source" : "[data/teamData.js]",
+    "target" : "duplicate27",
+    "count" : 1
+  }, {
+    "source" : "duplicate27",
+    "target" : "[data/teamData.js]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/form/index.jsx]",
+    "target" : "duplicate28",
+    "count" : 1
+  }, {
+    "source" : "duplicate28",
+    "target" : "[scenes/form/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/form/index.jsx]",
+    "target" : "duplicate28",
+    "count" : 1
+  }, {
+    "source" : "duplicate28",
+    "target" : "[scenes/form/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/form/index.jsx]",
+    "target" : "duplicate29",
+    "count" : 1
+  }, {
+    "source" : "duplicate29",
+    "target" : "[scenes/form/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/form/index.jsx]",
+    "target" : "duplicate29",
+    "count" : 1
+  }, {
+    "source" : "duplicate29",
+    "target" : "[scenes/form/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[data/contactsData.js]",
+    "target" : "duplicate30",
+    "count" : 1
+  }, {
+    "source" : "duplicate30",
+    "target" : "[data/contactsData.js]",
+    "count" : 1
+  }, {
+    "source" : "[data/teamData.js]",
+    "target" : "duplicate30",
+    "count" : 1
+  }, {
+    "source" : "duplicate30",
+    "target" : "[data/teamData.js]",
+    "count" : 1
+  }, {
+    "source" : "[data/contactsData.js]",
+    "target" : "duplicate31",
+    "count" : 1
+  }, {
+    "source" : "duplicate31",
+    "target" : "[data/contactsData.js]",
+    "count" : 1
+  }, {
+    "source" : "[data/teamData.js]",
+    "target" : "duplicate31",
+    "count" : 1
+  }, {
+    "source" : "duplicate31",
+    "target" : "[data/teamData.js]",
+    "count" : 1
+  }, {
+    "source" : "[data/contactsData.js]",
+    "target" : "duplicate32",
+    "count" : 1
+  }, {
+    "source" : "duplicate32",
+    "target" : "[data/contactsData.js]",
+    "count" : 1
+  }, {
+    "source" : "[data/teamData.js]",
+    "target" : "duplicate32",
+    "count" : 1
+  }, {
+    "source" : "duplicate32",
+    "target" : "[data/teamData.js]",
+    "count" : 1
+  }, {
+    "source" : "[data/transactionsData.js]",
+    "target" : "duplicate33",
+    "count" : 1
+  }, {
+    "source" : "duplicate33",
+    "target" : "[data/transactionsData.js]",
+    "count" : 1
+  }, {
+    "source" : "[data/transactionsData.js]",
+    "target" : "duplicate33",
+    "count" : 1
+  }, {
+    "source" : "duplicate33",
+    "target" : "[data/transactionsData.js]",
+    "count" : 1
+  }, {
+    "source" : "[data/contactsData.js]",
+    "target" : "duplicate34",
+    "count" : 1
+  }, {
+    "source" : "duplicate34",
+    "target" : "[data/contactsData.js]",
+    "count" : 1
+  }, {
+    "source" : "[data/teamData.js]",
+    "target" : "duplicate34",
+    "count" : 1
+  }, {
+    "source" : "duplicate34",
+    "target" : "[data/teamData.js]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/form/index.jsx]",
+    "target" : "duplicate35",
+    "count" : 1
+  }, {
+    "source" : "duplicate35",
+    "target" : "[scenes/form/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[scenes/form/index.jsx]",
+    "target" : "duplicate35",
+    "count" : 1
+  }, {
+    "source" : "duplicate35",
+    "target" : "[scenes/form/index.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[data/contactsData.js]",
+    "target" : "duplicate36",
+    "count" : 1
+  }, {
+    "source" : "duplicate36",
+    "target" : "[data/contactsData.js]",
+    "count" : 1
+  }, {
+    "source" : "[data/teamData.js]",
+    "target" : "duplicate36",
+    "count" : 1
+  }, {
+    "source" : "duplicate36",
+    "target" : "[data/teamData.js]",
+    "count" : 1
+  } ]
+}
+
+    const maxNodeSize = gData.nodes.map(n => n.size).reduce((a, b) => Math.max(a, b));
+    const maxCount = gData.links.map(l => l.count).reduce((a, b) => Math.max(a, b));
+
+    gData.links = gData.links.map(l => { return {source: l.target, target: l.source, count: l.count} });
+
+    const Graph = ForceGraph3D()
+    (document.getElementById('3d-graph'))
+        .graphData(gData)
+        .nodeRelSize(4)
+        .nodeVal(n => Math.max(20 * n.size / maxNodeSize, 0.001))
+        .nodeLabel(n => n.id + " (" + n.size + ")")
+        .nodeColor(n => n.id.startsWith("[") ? "skyblue" : "")
+        .linkDirectionalParticles(6)
+        .linkDirectionalParticleSpeed(d => d.count / maxCount * 0.01)
+        .linkOpacity(0.1)
+        .linkWidth(d => 3 * d.count / maxCount + 0.1);
+
+</script>
+</body>

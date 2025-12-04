@@ -1,0 +1,11 @@
+{
+  "name": "sokrates-runner",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local helper to download and run the Sokrates CLI jar",
+  "main": "index.js",
+  "bin": {
+    "sokrates-runner": "index.js"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,143 @@
+<html>
+<head>
+    <title>components/LineChart.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">components/LineChart.jsx (<b>114</b> lines of code) (<a href="LineChart.jsx">raw</a>):</h3>
+<div id="editor">import { ResponsiveLine } from &quot;@nivo/line&quot;;
+import { useTheme } from &quot;@mui/material&quot;;
+import { tokens } from &quot;../theme&quot;;
+import { mockLineData as data } from &quot;../data/mockData&quot;;
+
+const LineChart = ({ isCustomLineColors = false, isDashboard = false }) =&gt; {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+
+  return (
+    &lt;ResponsiveLine
+      data={data}
+      theme={{
+        axis: {
+          domain: {
+            line: {
+              stroke: colors.grey[100],
+            },
+          },
+          legend: {
+            text: {
+              fill: colors.grey[100],
+            },
+          },
+          ticks: {
+            line: {
+              stroke: colors.grey[100],
+              strokeWidth: 1,
+            },
+            text: {
+              fill: colors.grey[100],
+            },
+          },
+        },
+        legends: {
+          text: {
+            fill: colors.grey[100],
+          },
+        },
+        tooltip: {
+          container: {
+            color: colors.primary[500],
+          },
+        },
+      }}
+      colors={isDashboard ? { datum: &quot;color&quot; } : { scheme: &quot;nivo&quot; }} // added
+      margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+      xScale={{ type: &quot;point&quot; }}
+      yScale={{
+        type: &quot;linear&quot;,
+        min: &quot;auto&quot;,
+        max: &quot;auto&quot;,
+        stacked: true,
+        reverse: false,
+      }}
+      yFormat=&quot; &gt;-.2f&quot;
+      curve=&quot;catmullRom&quot;
+      axisTop={null}
+      axisRight={null}
+      axisBottom={{
+        orient: &quot;bottom&quot;,
+        tickSize: 0,
+        tickPadding: 5,
+        tickRotation: 0,
+        legend: isDashboard ? undefined : &quot;transportation&quot;, // added
+        legendOffset: 36,
+        legendPosition: &quot;middle&quot;,
+      }}
+      axisLeft={{
+        orient: &quot;left&quot;,
+        tickValues: 5, // added
+        tickSize: 3,
+        tickPadding: 5,
+        tickRotation: 0,
+        legend: isDashboard ? undefined : &quot;count&quot;, // added
+        legendOffset: -40,
+        legendPosition: &quot;middle&quot;,
+      }}
+      enableGridX={false}
+      enableGridY={false}
+      pointSize={8}
+      pointColor={{ theme: &quot;background&quot; }}
+      pointBorderWidth={2}
+      pointBorderColor={{ from: &quot;serieColor&quot; }}
+      pointLabelYOffset={-12}
+      useMesh={true}
+      legends={[
+        {
+          anchor: &quot;bottom-right&quot;,
+          direction: &quot;column&quot;,
+          justify: false,
+          translateX: 100,
+          translateY: 0,
+          itemsSpacing: 0,
+          itemDirection: &quot;left-to-right&quot;,
+          itemWidth: 80,
+          itemHeight: 20,
+          itemOpacity: 0.75,
+          symbolSize: 12,
+          symbolShape: &quot;circle&quot;,
+          symbolBorderColor: &quot;rgba(0, 0, 0, .5)&quot;,
+          effects: [
+            {
+              on: &quot;hover&quot;,
+              style: {
+                itemBackground: &quot;rgba(0, 0, 0, .03)&quot;,
+                itemOpacity: 1,
+              },
+            },
+          ],
+        },
+      ]}
+    /&gt;
+  );
+};
+
+export default LineChart;
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

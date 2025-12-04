@@ -1,0 +1,7 @@
+Path	Lines of Code
+scenes/dashboard/components/CampaignCard.jsx	26
+scenes/dashboard/components/GeographyTrafficCard.jsx	18
+scenes/dashboard/components/RevenueChartCard.jsx	38
+scenes/dashboard/components/SalesQuantityCard.jsx	21
+scenes/dashboard/components/StatsRow.jsx	74
+scenes/dashboard/components/TransactionsCard.jsx	53

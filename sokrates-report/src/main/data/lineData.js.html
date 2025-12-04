@@ -1,0 +1,193 @@
+<html>
+<head>
+    <title>data/lineData.js</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">data/lineData.js (<b>165</b> lines of code) (<a href="lineData.js">raw</a>):</h3>
+<div id="editor">import { tokens } from &quot;../theme&quot;;
+
+// extrait pour r&eacute;duire la taille du fichier selon le rapport Sokrates
+export const mockLineData = [
+  {
+    id: &quot;japan&quot;,
+    color: tokens(&quot;dark&quot;).greenAccent[500],
+    data: [
+      {
+        x: &quot;plane&quot;,
+        y: 101,
+      },
+      {
+        x: &quot;helicopter&quot;,
+        y: 75,
+      },
+      {
+        x: &quot;boat&quot;,
+        y: 36,
+      },
+      {
+        x: &quot;train&quot;,
+        y: 216,
+      },
+      {
+        x: &quot;subway&quot;,
+        y: 35,
+      },
+      {
+        x: &quot;bus&quot;,
+        y: 236,
+      },
+      {
+        x: &quot;car&quot;,
+        y: 88,
+      },
+      {
+        x: &quot;moto&quot;,
+        y: 232,
+      },
+      {
+        x: &quot;bicycle&quot;,
+        y: 281,
+      },
+      {
+        x: &quot;horse&quot;,
+        y: 1,
+      },
+      {
+        x: &quot;skateboard&quot;,
+        y: 35,
+      },
+      {
+        x: &quot;others&quot;,
+        y: 14,
+      },
+    ],
+  },
+  {
+    id: &quot;france&quot;,
+    color: tokens(&quot;dark&quot;).blueAccent[300],
+    data: [
+      {
+        x: &quot;plane&quot;,
+        y: 212,
+      },
+      {
+        x: &quot;helicopter&quot;,
+        y: 190,
+      },
+      {
+        x: &quot;boat&quot;,
+        y: 270,
+      },
+      {
+        x: &quot;train&quot;,
+        y: 9,
+      },
+      {
+        x: &quot;subway&quot;,
+        y: 75,
+      },
+      {
+        x: &quot;bus&quot;,
+        y: 175,
+      },
+      {
+        x: &quot;car&quot;,
+        y: 33,
+      },
+      {
+        x: &quot;moto&quot;,
+        y: 189,
+      },
+      {
+        x: &quot;bicycle&quot;,
+        y: 97,
+      },
+      {
+        x: &quot;horse&quot;,
+        y: 87,
+      },
+      {
+        x: &quot;skateboard&quot;,
+        y: 299,
+      },
+      {
+        x: &quot;others&quot;,
+        y: 251,
+      },
+    ],
+  },
+  {
+    id: &quot;us&quot;,
+    color: tokens(&quot;dark&quot;).redAccent[200],
+    data: [
+      {
+        x: &quot;plane&quot;,
+        y: 191,
+      },
+      {
+        x: &quot;helicopter&quot;,
+        y: 136,
+      },
+      {
+        x: &quot;boat&quot;,
+        y: 91,
+      },
+      {
+        x: &quot;train&quot;,
+        y: 190,
+      },
+      {
+        x: &quot;subway&quot;,
+        y: 211,
+      },
+      {
+        x: &quot;bus&quot;,
+        y: 152,
+      },
+      {
+        x: &quot;car&quot;,
+        y: 189,
+      },
+      {
+        x: &quot;moto&quot;,
+        y: 152,
+      },
+      {
+        x: &quot;bicycle&quot;,
+        y: 8,
+      },
+      {
+        x: &quot;horse&quot;,
+        y: 197,
+      },
+      {
+        x: &quot;skateboard&quot;,
+        y: 107,
+      },
+      {
+        x: &quot;others&quot;,
+        y: 170,
+      },
+    ],
+  },
+];
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/javascript");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

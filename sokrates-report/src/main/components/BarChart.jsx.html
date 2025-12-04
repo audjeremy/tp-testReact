@@ -1,0 +1,156 @@
+<html>
+<head>
+    <title>components/BarChart.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">components/BarChart.jsx (<b>127</b> lines of code) (<a href="BarChart.jsx">raw</a>):</h3>
+<div id="editor">import { useTheme } from &quot;@mui/material&quot;;
+import { ResponsiveBar } from &quot;@nivo/bar&quot;;
+import { tokens } from &quot;../theme&quot;;
+import { mockBarData as data } from &quot;../data/mockData&quot;;
+
+const BarChart = ({ isDashboard = false }) =&gt; {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+
+  return (
+    &lt;ResponsiveBar
+      data={data}
+      theme={{
+        // added
+        axis: {
+          domain: {
+            line: {
+              stroke: colors.grey[100],
+            },
+          },
+          legend: {
+            text: {
+              fill: colors.grey[100],
+            },
+          },
+          ticks: {
+            line: {
+              stroke: colors.grey[100],
+              strokeWidth: 1,
+            },
+            text: {
+              fill: colors.grey[100],
+            },
+          },
+        },
+        legends: {
+          text: {
+            fill: colors.grey[100],
+          },
+        },
+      }}
+      keys={[&quot;hot dog&quot;, &quot;burger&quot;, &quot;sandwich&quot;, &quot;kebab&quot;, &quot;fries&quot;, &quot;donut&quot;]}
+      indexBy=&quot;country&quot;
+      margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+      padding={0.3}
+      valueScale={{ type: &quot;linear&quot; }}
+      indexScale={{ type: &quot;band&quot;, round: true }}
+      colors={{ scheme: &quot;nivo&quot; }}
+      defs={[
+        {
+          id: &quot;dots&quot;,
+          type: &quot;patternDots&quot;,
+          background: &quot;inherit&quot;,
+          color: &quot;#38bcb2&quot;,
+          size: 4,
+          padding: 1,
+          stagger: true,
+        },
+        {
+          id: &quot;lines&quot;,
+          type: &quot;patternLines&quot;,
+          background: &quot;inherit&quot;,
+          color: &quot;#eed312&quot;,
+          rotation: -45,
+          lineWidth: 6,
+          spacing: 10,
+        },
+      ]}
+      borderColor={{
+        from: &quot;color&quot;,
+        modifiers: [[&quot;darker&quot;, &quot;1.6&quot;]],
+      }}
+      axisTop={null}
+      axisRight={null}
+      axisBottom={{
+        tickSize: 5,
+        tickPadding: 5,
+        tickRotation: 0,
+        legend: isDashboard ? undefined : &quot;country&quot;, // changed
+        legendPosition: &quot;middle&quot;,
+        legendOffset: 32,
+      }}
+      axisLeft={{
+        tickSize: 5,
+        tickPadding: 5,
+        tickRotation: 0,
+        legend: isDashboard ? undefined : &quot;food&quot;, // changed
+        legendPosition: &quot;middle&quot;,
+        legendOffset: -40,
+      }}
+      enableLabel={false}
+      labelSkipWidth={12}
+      labelSkipHeight={12}
+      labelTextColor={{
+        from: &quot;color&quot;,
+        modifiers: [[&quot;darker&quot;, 1.6]],
+      }}
+      legends={[
+        {
+          dataFrom: &quot;keys&quot;,
+          anchor: &quot;bottom-right&quot;,
+          direction: &quot;column&quot;,
+          justify: false,
+          translateX: 120,
+          translateY: 0,
+          itemsSpacing: 2,
+          itemWidth: 100,
+          itemHeight: 20,
+          itemDirection: &quot;left-to-right&quot;,
+          itemOpacity: 0.85,
+          symbolSize: 20,
+          effects: [
+            {
+              on: &quot;hover&quot;,
+              style: {
+                itemOpacity: 1,
+              },
+            },
+          ],
+        },
+      ]}
+      role=&quot;application&quot;
+      barAriaLabel={function (e) {
+        return e.id + &quot;: &quot; + e.formattedValue + &quot; in country: &quot; + e.indexValue;
+      }}
+    /&gt;
+  );
+};
+
+export default BarChart;
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

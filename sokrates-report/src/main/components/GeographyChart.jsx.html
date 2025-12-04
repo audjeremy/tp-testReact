@@ -1,0 +1,111 @@
+<html>
+<head>
+    <title>components/GeographyChart.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">components/GeographyChart.jsx (<b>83</b> lines of code) (<a href="GeographyChart.jsx">raw</a>):</h3>
+<div id="editor">import { useTheme } from &quot;@mui/material&quot;;
+import { ResponsiveChoropleth } from &quot;@nivo/geo&quot;;
+import { geoFeatures } from &quot;../data/mockGeoFeatures&quot;;
+import { tokens } from &quot;../theme&quot;;
+import { mockGeographyData as data } from &quot;../data/mockData&quot;;
+
+const GeographyChart = ({ isDashboard = false }) =&gt; {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+  return (
+    &lt;ResponsiveChoropleth
+      data={data}
+      theme={{
+        axis: {
+          domain: {
+            line: {
+              stroke: colors.grey[100],
+            },
+          },
+          legend: {
+            text: {
+              fill: colors.grey[100],
+            },
+          },
+          ticks: {
+            line: {
+              stroke: colors.grey[100],
+              strokeWidth: 1,
+            },
+            text: {
+              fill: colors.grey[100],
+            },
+          },
+        },
+        legends: {
+          text: {
+            fill: colors.grey[100],
+          },
+        },
+      }}
+      features={geoFeatures.features}
+      margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
+      domain={[0, 1000000]}
+      unknownColor=&quot;#666666&quot;
+      label=&quot;properties.name&quot;
+      valueFormat=&quot;.2s&quot;
+      projectionScale={isDashboard ? 40 : 150}
+      projectionTranslation={isDashboard ? [0.49, 0.6] : [0.5, 0.5]}
+      projectionRotation={[0, 0, 0]}
+      borderWidth={1.5}
+      borderColor=&quot;#ffffff&quot;
+      legends={
+        !isDashboard
+          ? [
+              {
+                anchor: &quot;bottom-left&quot;,
+                direction: &quot;column&quot;,
+                justify: true,
+                translateX: 20,
+                translateY: -100,
+                itemsSpacing: 0,
+                itemWidth: 94,
+                itemHeight: 18,
+                itemDirection: &quot;left-to-right&quot;,
+                itemTextColor: colors.grey[100],
+                itemOpacity: 0.85,
+                symbolSize: 18,
+                effects: [
+                  {
+                    on: &quot;hover&quot;,
+                    style: {
+                      itemTextColor: &quot;#ffffff&quot;,
+                      itemOpacity: 1,
+                    },
+                  },
+                ],
+              },
+            ]
+          : undefined
+      }
+    /&gt;
+  );
+};
+
+export default GeographyChart;
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

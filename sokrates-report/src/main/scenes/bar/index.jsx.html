@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>scenes/bar/index.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">scenes/bar/index.jsx (<b>14</b> lines of code) (<a href="index.jsx">raw</a>):</h3>
+<div id="editor">import { Box } from &quot;@mui/material&quot;;
+import Header from &quot;../../components/Header&quot;;
+import BarChart from &quot;../../components/BarChart&quot;;
+
+const Bar = () =&gt; {
+  return (
+    &lt;Box m=&quot;20px&quot;&gt;
+      &lt;Header title=&quot;Bar Chart&quot; subtitle=&quot;Simple Bar Chart&quot; /&gt;
+      &lt;Box height=&quot;75vh&quot;&gt;
+        &lt;BarChart /&gt;
+      &lt;/Box&gt;
+    &lt;/Box&gt;
+  );
+};
+
+export default Bar;
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

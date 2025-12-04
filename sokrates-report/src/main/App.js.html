@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title>App.js</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">App.js (<b>44</b> lines of code) (<a href="App.js">raw</a>):</h3>
+<div id="editor">import { useState } from &quot;react&quot;;
+import { Routes, Route } from &quot;react-router-dom&quot;;
+import Topbar from &quot;./scenes/global/Topbar&quot;;
+import Sidebar from &quot;./scenes/global/Sidebar&quot;;
+import Dashboard from &quot;./scenes/dashboard&quot;;
+import Team from &quot;./scenes/team&quot;;
+import Invoices from &quot;./scenes/invoices&quot;;
+import Contacts from &quot;./scenes/contacts&quot;;
+import Bar from &quot;./scenes/bar&quot;;
+import Form from &quot;./scenes/form&quot;;
+import Line from &quot;./scenes/line&quot;;
+import Pie from &quot;./scenes/pie&quot;;
+import FAQ from &quot;./scenes/faq&quot;;
+import Geography from &quot;./scenes/geography&quot;;
+import { CssBaseline, ThemeProvider } from &quot;@mui/material&quot;;
+import { ColorModeContext, useMode } from &quot;./theme&quot;;
+import Calendar from &quot;./scenes/calendar/calendar&quot;;
+
+function App() {
+  const [theme, colorMode] = useMode();
+  const [isSidebar, setIsSidebar] = useState(true);
+
+  return (
+    &lt;ColorModeContext.Provider value={colorMode}&gt;
+      &lt;ThemeProvider theme={theme}&gt;
+        &lt;CssBaseline /&gt;
+        &lt;div
+          className=&quot;app&quot;
+          data-testid=&quot;app-root&quot;
+          data-theme-mode={theme.palette.mode}
+        &gt;
+          &lt;Sidebar isSidebar={isSidebar} /&gt;
+          &lt;main className=&quot;content&quot;&gt;
+            &lt;Topbar setIsSidebar={setIsSidebar} /&gt;
+            &lt;Routes&gt;
+              &lt;Route path=&quot;/&quot; element={&lt;Dashboard /&gt;} /&gt;
+              &lt;Route path=&quot;/team&quot; element={&lt;Team /&gt;} /&gt;
+              &lt;Route path=&quot;/contacts&quot; element={&lt;Contacts /&gt;} /&gt;
+              &lt;Route path=&quot;/invoices&quot; element={&lt;Invoices /&gt;} /&gt;
+              &lt;Route path=&quot;/form&quot; element={&lt;Form /&gt;} /&gt;
+              &lt;Route path=&quot;/bar&quot; element={&lt;Bar /&gt;} /&gt;
+              &lt;Route path=&quot;/pie&quot; element={&lt;Pie /&gt;} /&gt;
+              &lt;Route path=&quot;/line&quot; element={&lt;Line /&gt;} /&gt;
+              &lt;Route path=&quot;/faq&quot; element={&lt;FAQ /&gt;} /&gt;
+              &lt;Route path=&quot;/calendar&quot; element={&lt;Calendar /&gt;} /&gt;
+              &lt;Route path=&quot;/geography&quot; element={&lt;Geography /&gt;} /&gt;
+            &lt;/Routes&gt;
+          &lt;/main&gt;
+        &lt;/div&gt;
+      &lt;/ThemeProvider&gt;
+    &lt;/ColorModeContext.Provider&gt;
+  );
+}
+
+export default App;
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/javascript");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

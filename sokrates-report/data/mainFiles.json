@@ -1,0 +1,351 @@
+[ {
+  "relativePath" : "scenes/form/index.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 153,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "scenes/calendar/calendar.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 123,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "scenes/invoices/index.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 80,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "scenes/faq/index.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 83,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "scenes/contacts/index.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 99,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "scenes/pie/index.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "scenes/dashboard/components/TransactionsCard.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 53,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "scenes/dashboard/components/RevenueChartCard.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 38,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "scenes/dashboard/components/SalesQuantityCard.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 21,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "scenes/dashboard/components/CampaignCard.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 26,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "scenes/dashboard/components/StatsRow.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 74,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "scenes/dashboard/components/GeographyTrafficCard.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "scenes/dashboard/index.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 54,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "scenes/team/index.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 134,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "scenes/line/index.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "scenes/bar/index.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "scenes/global/Sidebar.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 235,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "scenes/global/Topbar.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 50,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "scenes/geography/index.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 21,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "test/renderWithTheme.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 15,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "test/setupTests.js",
+  "extension" : "js",
+  "linesOfCode" : 9,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "index.js",
+  "extension" : "js",
+  "linesOfCode" : 12,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "theme.js",
+  "extension" : "js",
+  "linesOfCode" : 203,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "utils/__test__/stats.test.js",
+  "extension" : "js",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "utils/__test__/filters.test.js",
+  "extension" : "js",
+  "linesOfCode" : 57,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "utils/__test__/formatters.test.js",
+  "extension" : "js",
+  "linesOfCode" : 43,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "utils/formatters.js",
+  "extension" : "js",
+  "linesOfCode" : 39,
+  "unitsCount" : 3,
+  "unitsMcCabeIndexSum" : 14,
+  "linesOfCodeInUnits" : 39
+}, {
+  "relativePath" : "utils/filters.js",
+  "extension" : "js",
+  "linesOfCode" : 29,
+  "unitsCount" : 3,
+  "unitsMcCabeIndexSum" : 24,
+  "linesOfCodeInUnits" : 29
+}, {
+  "relativePath" : "utils/stats.js",
+  "extension" : "js",
+  "linesOfCode" : 23,
+  "unitsCount" : 3,
+  "unitsMcCabeIndexSum" : 14,
+  "linesOfCodeInUnits" : 23
+}, {
+  "relativePath" : "components/Header.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "components/BarChart.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 127,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "components/LineChart.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 114,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "components/__test__/Header.test.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 20,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "components/__test__/LineChart.test.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 33,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "components/__test__/StatBox.test.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 22,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "components/PieChart.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 107,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "components/ProgressCircle.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 20,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "components/GeographyChart.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 83,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "components/StatBox.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 39,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "data/geographyData.js",
+  "extension" : "js",
+  "linesOfCode" : 686,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "data/teamData.js",
+  "extension" : "js",
+  "linesOfCode" : 74,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "data/contactsData.js",
+  "extension" : "js",
+  "linesOfCode" : 123,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "data/mockData.js",
+  "extension" : "js",
+  "linesOfCode" : 8,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "data/barData.js",
+  "extension" : "js",
+  "linesOfCode" : 79,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "data/lineData.js",
+  "extension" : "js",
+  "linesOfCode" : 165,
+  "unitsCount" : 3,
+  "unitsMcCabeIndexSum" : 3,
+  "linesOfCodeInUnits" : 18
+}, {
+  "relativePath" : "data/pieData.js",
+  "extension" : "js",
+  "linesOfCode" : 32,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "data/transactionsData.js",
+  "extension" : "js",
+  "linesOfCode" : 50,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "data/invoicesData.js",
+  "extension" : "js",
+  "linesOfCode" : 66,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "App.js",
+  "extension" : "js",
+  "linesOfCode" : 44,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "validation/teamSchemas.js",
+  "extension" : "js",
+  "linesOfCode" : 15,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+} ]

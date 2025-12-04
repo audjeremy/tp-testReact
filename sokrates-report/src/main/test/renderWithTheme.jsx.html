@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>test/renderWithTheme.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">test/renderWithTheme.jsx (<b>15</b> lines of code) (<a href="renderWithTheme.jsx">raw</a>):</h3>
+<div id="editor">// src/test/renderWithTheme.jsx
+// But: wrapper tous nos composants MUI dans un ThemeProvider pour les tests.
+
+import React from 'react'
+import { ThemeProvider, CssBaseline, createTheme } from '@mui/material'
+import { render } from '@testing-library/react'
+
+// Petit th&egrave;me par d&eacute;faut (suffisant pour les tests)
+const testTheme = createTheme()
+
+export function renderWithTheme(ui) {
+  return render(
+    &lt;ThemeProvider theme={testTheme}&gt;
+      &lt;CssBaseline /&gt;
+      {ui}
+    &lt;/ThemeProvider&gt;
+  )
+}</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

@@ -1,0 +1,4 @@
+Path	Lines of Code
+components/__test__/Header.test.jsx	20
+components/__test__/LineChart.test.jsx	33
+components/__test__/StatBox.test.jsx	22

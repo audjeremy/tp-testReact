@@ -1,0 +1,2 @@
+Path	Lines of Code
+scenes/invoices/index.jsx	80

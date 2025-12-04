@@ -1,0 +1,1050 @@
+{
+  "title" : "Duplication",
+  "timestamp" : "2025-12-03 13:57:27",
+  "duplicates" : [ {
+    "blockSize" : 29,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "components/GeographyChart.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 83,
+        "components" : [ "primary::components" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 83,
+      "startLine" : 12,
+      "endLine" : 40,
+      "cleanedStartLine" : 11,
+      "cleanedEndLine" : 39
+    }, {
+      "file" : {
+        "relativePath" : "components/PieChart.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 107,
+        "components" : [ "primary::components" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 107,
+      "startLine" : 11,
+      "endLine" : 39,
+      "cleanedStartLine" : 10,
+      "cleanedEndLine" : 38
+    } ]
+  }, {
+    "blockSize" : 28,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "components/LineChart.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 114,
+        "components" : [ "primary::components" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 114,
+      "startLine" : 12,
+      "endLine" : 39,
+      "cleanedStartLine" : 10,
+      "cleanedEndLine" : 37
+    }, {
+      "file" : {
+        "relativePath" : "components/PieChart.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 107,
+        "components" : [ "primary::components" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 107,
+      "startLine" : 11,
+      "endLine" : 38,
+      "cleanedStartLine" : 10,
+      "cleanedEndLine" : 37
+    } ]
+  }, {
+    "blockSize" : 28,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "components/GeographyChart.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 83,
+        "components" : [ "primary::components" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 83,
+      "startLine" : 12,
+      "endLine" : 39,
+      "cleanedStartLine" : 11,
+      "cleanedEndLine" : 38
+    }, {
+      "file" : {
+        "relativePath" : "components/LineChart.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 114,
+        "components" : [ "primary::components" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 114,
+      "startLine" : 12,
+      "endLine" : 39,
+      "cleanedStartLine" : 10,
+      "cleanedEndLine" : 37
+    } ]
+  }, {
+    "blockSize" : 27,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "scenes/contacts/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 99,
+        "components" : [ "primary::scenes/contacts" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 97,
+      "startLine" : 61,
+      "endLine" : 87,
+      "cleanedStartLine" : 58,
+      "cleanedEndLine" : 84
+    }, {
+      "file" : {
+        "relativePath" : "scenes/invoices/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 80,
+        "components" : [ "primary::scenes/invoices" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 77,
+      "startLine" : 48,
+      "endLine" : 74,
+      "cleanedStartLine" : 45,
+      "cleanedEndLine" : 71
+    } ]
+  }, {
+    "blockSize" : 27,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "components/BarChart.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 127,
+        "components" : [ "primary::components" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 127,
+      "startLine" : 15,
+      "endLine" : 41,
+      "cleanedStartLine" : 13,
+      "cleanedEndLine" : 39
+    }, {
+      "file" : {
+        "relativePath" : "components/GeographyChart.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 83,
+        "components" : [ "primary::components" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 83,
+      "startLine" : 14,
+      "endLine" : 40,
+      "cleanedStartLine" : 13,
+      "cleanedEndLine" : 39
+    } ]
+  }, {
+    "blockSize" : 27,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "components/BarChart.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 127,
+        "components" : [ "primary::components" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 127,
+      "startLine" : 15,
+      "endLine" : 41,
+      "cleanedStartLine" : 13,
+      "cleanedEndLine" : 39
+    }, {
+      "file" : {
+        "relativePath" : "components/PieChart.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 107,
+        "components" : [ "primary::components" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 107,
+      "startLine" : 13,
+      "endLine" : 39,
+      "cleanedStartLine" : 12,
+      "cleanedEndLine" : 38
+    } ]
+  }, {
+    "blockSize" : 26,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "components/BarChart.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 127,
+        "components" : [ "primary::components" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 127,
+      "startLine" : 15,
+      "endLine" : 40,
+      "cleanedStartLine" : 13,
+      "cleanedEndLine" : 38
+    }, {
+      "file" : {
+        "relativePath" : "components/LineChart.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 114,
+        "components" : [ "primary::components" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 114,
+      "startLine" : 14,
+      "endLine" : 39,
+      "cleanedStartLine" : 12,
+      "cleanedEndLine" : 37
+    } ]
+  }, {
+    "blockSize" : 24,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "scenes/contacts/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 99,
+        "components" : [ "primary::scenes/contacts" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 97,
+      "startLine" : 15,
+      "endLine" : 38,
+      "cleanedStartLine" : 13,
+      "cleanedEndLine" : 36
+    }, {
+      "file" : {
+        "relativePath" : "scenes/team/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 134,
+        "components" : [ "primary::scenes/team" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 128,
+      "startLine" : 19,
+      "endLine" : 42,
+      "cleanedStartLine" : 17,
+      "cleanedEndLine" : 40
+    } ]
+  }, {
+    "blockSize" : 12,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "scenes/contacts/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 99,
+        "components" : [ "primary::scenes/contacts" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 97,
+      "startLine" : 27,
+      "endLine" : 38,
+      "cleanedStartLine" : 25,
+      "cleanedEndLine" : 36
+    }, {
+      "file" : {
+        "relativePath" : "scenes/invoices/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 80,
+        "components" : [ "primary::scenes/invoices" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 77,
+      "startLine" : 17,
+      "endLine" : 28,
+      "cleanedStartLine" : 16,
+      "cleanedEndLine" : 27
+    } ]
+  }, {
+    "blockSize" : 12,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "scenes/invoices/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 80,
+        "components" : [ "primary::scenes/invoices" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 77,
+      "startLine" : 17,
+      "endLine" : 28,
+      "cleanedStartLine" : 16,
+      "cleanedEndLine" : 27
+    }, {
+      "file" : {
+        "relativePath" : "scenes/team/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 134,
+        "components" : [ "primary::scenes/team" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 128,
+      "startLine" : 31,
+      "endLine" : 42,
+      "cleanedStartLine" : 29,
+      "cleanedEndLine" : 40
+    } ]
+  }, {
+    "blockSize" : 10,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "theme.js",
+        "extension" : "js",
+        "linesOfCode" : 203,
+        "components" : [ "primary::ROOT" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 199,
+      "startLine" : 134,
+      "endLine" : 143,
+      "cleanedStartLine" : 126,
+      "cleanedEndLine" : 135
+    }, {
+      "file" : {
+        "relativePath" : "theme.js",
+        "extension" : "js",
+        "linesOfCode" : 203,
+        "components" : [ "primary::ROOT" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 199,
+      "startLine" : 151,
+      "endLine" : 160,
+      "cleanedStartLine" : 141,
+      "cleanedEndLine" : 150
+    } ]
+  }, {
+    "blockSize" : 9,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "scenes/invoices/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 80,
+        "components" : [ "primary::scenes/invoices" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 77,
+      "startLine" : 10,
+      "endLine" : 18,
+      "cleanedStartLine" : 9,
+      "cleanedEndLine" : 17
+    }, {
+      "file" : {
+        "relativePath" : "scenes/team/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 134,
+        "components" : [ "primary::scenes/team" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 128,
+      "startLine" : 17,
+      "endLine" : 25,
+      "cleanedStartLine" : 15,
+      "cleanedEndLine" : 23
+    } ]
+  }, {
+    "blockSize" : 8,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "components/LineChart.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 114,
+        "components" : [ "primary::components" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 114,
+      "startLine" : 108,
+      "endLine" : 115,
+      "cleanedStartLine" : 106,
+      "cleanedEndLine" : 113
+    }, {
+      "file" : {
+        "relativePath" : "components/PieChart.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 107,
+        "components" : [ "primary::components" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 107,
+      "startLine" : 100,
+      "endLine" : 107,
+      "cleanedStartLine" : 99,
+      "cleanedEndLine" : 106
+    } ]
+  }, {
+    "blockSize" : 8,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "components/BarChart.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 127,
+        "components" : [ "primary::components" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 127,
+      "startLine" : 55,
+      "endLine" : 62,
+      "cleanedStartLine" : 53,
+      "cleanedEndLine" : 60
+    }, {
+      "file" : {
+        "relativePath" : "components/PieChart.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 107,
+        "components" : [ "primary::components" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 107,
+      "startLine" : 66,
+      "endLine" : 73,
+      "cleanedStartLine" : 65,
+      "cleanedEndLine" : 72
+    } ]
+  }, {
+    "blockSize" : 7,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "scenes/faq/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 83,
+        "components" : [ "primary::scenes/faq" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 57,
+      "startLine" : 36,
+      "endLine" : 45,
+      "cleanedStartLine" : 27,
+      "cleanedEndLine" : 33
+    }, {
+      "file" : {
+        "relativePath" : "scenes/faq/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 83,
+        "components" : [ "primary::scenes/faq" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 57,
+      "startLine" : 49,
+      "endLine" : 58,
+      "cleanedStartLine" : 35,
+      "cleanedEndLine" : 41
+    } ]
+  }, {
+    "blockSize" : 7,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "scenes/faq/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 83,
+        "components" : [ "primary::scenes/faq" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 57,
+      "startLine" : 23,
+      "endLine" : 32,
+      "cleanedStartLine" : 19,
+      "cleanedEndLine" : 25
+    }, {
+      "file" : {
+        "relativePath" : "scenes/faq/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 83,
+        "components" : [ "primary::scenes/faq" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 57,
+      "startLine" : 62,
+      "endLine" : 71,
+      "cleanedStartLine" : 43,
+      "cleanedEndLine" : 49
+    } ]
+  }, {
+    "blockSize" : 7,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "scenes/faq/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 83,
+        "components" : [ "primary::scenes/faq" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 57,
+      "startLine" : 36,
+      "endLine" : 45,
+      "cleanedStartLine" : 27,
+      "cleanedEndLine" : 33
+    }, {
+      "file" : {
+        "relativePath" : "scenes/faq/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 83,
+        "components" : [ "primary::scenes/faq" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 57,
+      "startLine" : 62,
+      "endLine" : 71,
+      "cleanedStartLine" : 43,
+      "cleanedEndLine" : 49
+    } ]
+  }, {
+    "blockSize" : 7,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "scenes/faq/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 83,
+        "components" : [ "primary::scenes/faq" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 57,
+      "startLine" : 49,
+      "endLine" : 58,
+      "cleanedStartLine" : 35,
+      "cleanedEndLine" : 41
+    }, {
+      "file" : {
+        "relativePath" : "scenes/faq/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 83,
+        "components" : [ "primary::scenes/faq" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 57,
+      "startLine" : 62,
+      "endLine" : 71,
+      "cleanedStartLine" : 43,
+      "cleanedEndLine" : 49
+    } ]
+  }, {
+    "blockSize" : 7,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "scenes/contacts/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 99,
+        "components" : [ "primary::scenes/contacts" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 97,
+      "startLine" : 15,
+      "endLine" : 21,
+      "cleanedStartLine" : 13,
+      "cleanedEndLine" : 19
+    }, {
+      "file" : {
+        "relativePath" : "scenes/invoices/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 80,
+        "components" : [ "primary::scenes/invoices" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 77,
+      "startLine" : 12,
+      "endLine" : 18,
+      "cleanedStartLine" : 11,
+      "cleanedEndLine" : 17
+    } ]
+  }, {
+    "blockSize" : 7,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "scenes/faq/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 83,
+        "components" : [ "primary::scenes/faq" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 57,
+      "startLine" : 23,
+      "endLine" : 32,
+      "cleanedStartLine" : 19,
+      "cleanedEndLine" : 25
+    }, {
+      "file" : {
+        "relativePath" : "scenes/faq/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 83,
+        "components" : [ "primary::scenes/faq" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 57,
+      "startLine" : 49,
+      "endLine" : 58,
+      "cleanedStartLine" : 35,
+      "cleanedEndLine" : 41
+    } ]
+  }, {
+    "blockSize" : 7,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "scenes/faq/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 83,
+        "components" : [ "primary::scenes/faq" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 57,
+      "startLine" : 23,
+      "endLine" : 32,
+      "cleanedStartLine" : 19,
+      "cleanedEndLine" : 25
+    }, {
+      "file" : {
+        "relativePath" : "scenes/faq/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 83,
+        "components" : [ "primary::scenes/faq" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 57,
+      "startLine" : 36,
+      "endLine" : 45,
+      "cleanedStartLine" : 27,
+      "cleanedEndLine" : 33
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "data/contactsData.js",
+        "extension" : "js",
+        "linesOfCode" : 123,
+        "components" : [ "primary::data" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 112,
+      "startLine" : 35,
+      "endLine" : 41,
+      "cleanedStartLine" : 31,
+      "cleanedEndLine" : 36
+    }, {
+      "file" : {
+        "relativePath" : "data/teamData.js",
+        "extension" : "js",
+        "linesOfCode" : 74,
+        "components" : [ "primary::data" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 65,
+      "startLine" : 26,
+      "endLine" : 32,
+      "cleanedStartLine" : 22,
+      "cleanedEndLine" : 27
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "data/contactsData.js",
+        "extension" : "js",
+        "linesOfCode" : 123,
+        "components" : [ "primary::data" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 112,
+      "startLine" : 90,
+      "endLine" : 96,
+      "cleanedStartLine" : 81,
+      "cleanedEndLine" : 86
+    }, {
+      "file" : {
+        "relativePath" : "data/teamData.js",
+        "extension" : "js",
+        "linesOfCode" : 74,
+        "components" : [ "primary::data" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 65,
+      "startLine" : 66,
+      "endLine" : 72,
+      "cleanedStartLine" : 57,
+      "cleanedEndLine" : 62
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "components/BarChart.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 127,
+        "components" : [ "primary::components" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 127,
+      "startLine" : 116,
+      "endLine" : 121,
+      "cleanedStartLine" : 114,
+      "cleanedEndLine" : 119
+    }, {
+      "file" : {
+        "relativePath" : "components/LineChart.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 114,
+        "components" : [ "primary::components" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 114,
+      "startLine" : 107,
+      "endLine" : 112,
+      "cleanedStartLine" : 105,
+      "cleanedEndLine" : 110
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "data/transactionsData.js",
+        "extension" : "js",
+        "linesOfCode" : 50,
+        "components" : [ "primary::data" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 42,
+      "startLine" : 14,
+      "endLine" : 20,
+      "cleanedStartLine" : 11,
+      "cleanedEndLine" : 16
+    }, {
+      "file" : {
+        "relativePath" : "data/transactionsData.js",
+        "extension" : "js",
+        "linesOfCode" : 50,
+        "components" : [ "primary::data" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 42,
+      "startLine" : 32,
+      "endLine" : 38,
+      "cleanedStartLine" : 26,
+      "cleanedEndLine" : 31
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "scenes/form/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 153,
+        "components" : [ "primary::scenes/form" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 147,
+      "startLine" : 91,
+      "endLine" : 96,
+      "cleanedStartLine" : 87,
+      "cleanedEndLine" : 92
+    }, {
+      "file" : {
+        "relativePath" : "scenes/form/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 153,
+        "components" : [ "primary::scenes/form" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 147,
+      "startLine" : 104,
+      "endLine" : 109,
+      "cleanedStartLine" : 100,
+      "cleanedEndLine" : 105
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "data/contactsData.js",
+        "extension" : "js",
+        "linesOfCode" : 123,
+        "components" : [ "primary::data" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 112,
+      "startLine" : 79,
+      "endLine" : 85,
+      "cleanedStartLine" : 71,
+      "cleanedEndLine" : 76
+    }, {
+      "file" : {
+        "relativePath" : "data/teamData.js",
+        "extension" : "js",
+        "linesOfCode" : 74,
+        "components" : [ "primary::data" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 65,
+      "startLine" : 58,
+      "endLine" : 64,
+      "cleanedStartLine" : 50,
+      "cleanedEndLine" : 55
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "scenes/form/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 153,
+        "components" : [ "primary::scenes/form" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 147,
+      "startLine" : 52,
+      "endLine" : 57,
+      "cleanedStartLine" : 48,
+      "cleanedEndLine" : 53
+    }, {
+      "file" : {
+        "relativePath" : "scenes/form/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 153,
+        "components" : [ "primary::scenes/form" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 147,
+      "startLine" : 65,
+      "endLine" : 70,
+      "cleanedStartLine" : 61,
+      "cleanedEndLine" : 66
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "scenes/form/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 153,
+        "components" : [ "primary::scenes/form" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 147,
+      "startLine" : 78,
+      "endLine" : 83,
+      "cleanedStartLine" : 74,
+      "cleanedEndLine" : 79
+    }, {
+      "file" : {
+        "relativePath" : "scenes/form/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 153,
+        "components" : [ "primary::scenes/form" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 147,
+      "startLine" : 104,
+      "endLine" : 109,
+      "cleanedStartLine" : 100,
+      "cleanedEndLine" : 105
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "data/contactsData.js",
+        "extension" : "js",
+        "linesOfCode" : 123,
+        "components" : [ "primary::data" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 112,
+      "startLine" : 13,
+      "endLine" : 19,
+      "cleanedStartLine" : 11,
+      "cleanedEndLine" : 16
+    }, {
+      "file" : {
+        "relativePath" : "data/teamData.js",
+        "extension" : "js",
+        "linesOfCode" : 74,
+        "components" : [ "primary::data" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 65,
+      "startLine" : 10,
+      "endLine" : 16,
+      "cleanedStartLine" : 8,
+      "cleanedEndLine" : 13
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "data/contactsData.js",
+        "extension" : "js",
+        "linesOfCode" : 123,
+        "components" : [ "primary::data" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 112,
+      "startLine" : 46,
+      "endLine" : 52,
+      "cleanedStartLine" : 41,
+      "cleanedEndLine" : 46
+    }, {
+      "file" : {
+        "relativePath" : "data/teamData.js",
+        "extension" : "js",
+        "linesOfCode" : 74,
+        "components" : [ "primary::data" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 65,
+      "startLine" : 34,
+      "endLine" : 40,
+      "cleanedStartLine" : 29,
+      "cleanedEndLine" : 34
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "data/contactsData.js",
+        "extension" : "js",
+        "linesOfCode" : 123,
+        "components" : [ "primary::data" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 112,
+      "startLine" : 24,
+      "endLine" : 30,
+      "cleanedStartLine" : 21,
+      "cleanedEndLine" : 26
+    }, {
+      "file" : {
+        "relativePath" : "data/teamData.js",
+        "extension" : "js",
+        "linesOfCode" : 74,
+        "components" : [ "primary::data" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 65,
+      "startLine" : 18,
+      "endLine" : 24,
+      "cleanedStartLine" : 15,
+      "cleanedEndLine" : 20
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "data/transactionsData.js",
+        "extension" : "js",
+        "linesOfCode" : 50,
+        "components" : [ "primary::data" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 42,
+      "startLine" : 8,
+      "endLine" : 14,
+      "cleanedStartLine" : 6,
+      "cleanedEndLine" : 11
+    }, {
+      "file" : {
+        "relativePath" : "data/transactionsData.js",
+        "extension" : "js",
+        "linesOfCode" : 50,
+        "components" : [ "primary::data" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 42,
+      "startLine" : 44,
+      "endLine" : 50,
+      "cleanedStartLine" : 36,
+      "cleanedEndLine" : 41
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "data/contactsData.js",
+        "extension" : "js",
+        "linesOfCode" : 123,
+        "components" : [ "primary::data" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 112,
+      "startLine" : 68,
+      "endLine" : 74,
+      "cleanedStartLine" : 61,
+      "cleanedEndLine" : 66
+    }, {
+      "file" : {
+        "relativePath" : "data/teamData.js",
+        "extension" : "js",
+        "linesOfCode" : 74,
+        "components" : [ "primary::data" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 65,
+      "startLine" : 50,
+      "endLine" : 56,
+      "cleanedStartLine" : 43,
+      "cleanedEndLine" : 48
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "scenes/form/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 153,
+        "components" : [ "primary::scenes/form" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 147,
+      "startLine" : 78,
+      "endLine" : 83,
+      "cleanedStartLine" : 74,
+      "cleanedEndLine" : 79
+    }, {
+      "file" : {
+        "relativePath" : "scenes/form/index.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 153,
+        "components" : [ "primary::scenes/form" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 147,
+      "startLine" : 91,
+      "endLine" : 96,
+      "cleanedStartLine" : 87,
+      "cleanedEndLine" : 92
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "data/contactsData.js",
+        "extension" : "js",
+        "linesOfCode" : 123,
+        "components" : [ "primary::data" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 112,
+      "startLine" : 57,
+      "endLine" : 63,
+      "cleanedStartLine" : 51,
+      "cleanedEndLine" : 56
+    }, {
+      "file" : {
+        "relativePath" : "data/teamData.js",
+        "extension" : "js",
+        "linesOfCode" : 74,
+        "components" : [ "primary::data" ],
+        "concerns" : [ ]
+      },
+      "sourceFileCleanedLinesOfCode" : 65,
+      "startLine" : 42,
+      "endLine" : 48,
+      "cleanedStartLine" : 36,
+      "cleanedEndLine" : 41
+    } ]
+  } ],
+  "overallDuplication" : null
+}

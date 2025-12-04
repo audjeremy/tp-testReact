@@ -1,0 +1,12 @@
+27 duplicated lines in:
+  - scenes/contacts/index.jsx (61:87, 27%)
+  - scenes/invoices/index.jsx (48:74, 35%)
+
+12 duplicated lines in:
+  - scenes/contacts/index.jsx (27:38, 12%)
+  - scenes/invoices/index.jsx (17:28, 15%)
+
+7 duplicated lines in:
+  - scenes/contacts/index.jsx (15:21, 7%)
+  - scenes/invoices/index.jsx (12:18, 9%)
+

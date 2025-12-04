@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>components/ProgressCircle.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">components/ProgressCircle.jsx (<b>20</b> lines of code) (<a href="ProgressCircle.jsx">raw</a>):</h3>
+<div id="editor">import { Box, useTheme } from &quot;@mui/material&quot;;
+import { tokens } from &quot;../theme&quot;;
+
+const ProgressCircle = ({ progress = &quot;0.75&quot;, size = &quot;40&quot; }) =&gt; {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+  const angle = progress * 360;
+  return (
+    &lt;Box
+      sx={{
+        background: `radial-gradient(${colors.primary[400]} 55%, transparent 56%),
+            conic-gradient(transparent 0deg ${angle}deg, ${colors.blueAccent[500]} ${angle}deg 360deg),
+            ${colors.greenAccent[500]}`,
+        borderRadius: &quot;50%&quot;,
+        width: `${size}px`,
+        height: `${size}px`,
+      }}
+    /&gt;
+  );
+};
+
+export default ProgressCircle;
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

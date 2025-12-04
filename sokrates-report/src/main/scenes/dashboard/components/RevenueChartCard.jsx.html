@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>scenes/dashboard/components/RevenueChartCard.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">scenes/dashboard/components/RevenueChartCard.jsx (<b>38</b> lines of code) (<a href="RevenueChartCard.jsx">raw</a>):</h3>
+<div id="editor">import { Box, IconButton, Typography } from &quot;@mui/material&quot;;
+import DownloadOutlinedIcon from &quot;@mui/icons-material/DownloadOutlined&quot;;
+import LineChart from &quot;../../../components/LineChart&quot;;
+
+const RevenueChartCard = ({ colors }) =&gt; (
+  &lt;Box
+    gridColumn=&quot;span 8&quot;
+    gridRow=&quot;span 2&quot;
+    backgroundColor={colors.primary[400]}
+  &gt;
+    &lt;Box
+      mt=&quot;25px&quot;
+      p=&quot;0 30px&quot;
+      display=&quot;flex &quot;
+      justifyContent=&quot;space-between&quot;
+      alignItems=&quot;center&quot;
+    &gt;
+      &lt;Box&gt;
+        &lt;Typography variant=&quot;h5&quot; fontWeight=&quot;600&quot; color={colors.grey[100]}&gt;
+          Revenue Generated
+        &lt;/Typography&gt;
+        &lt;Typography variant=&quot;h3&quot; fontWeight=&quot;bold&quot; color={colors.greenAccent[500]}&gt;
+          $59,342.32
+        &lt;/Typography&gt;
+      &lt;/Box&gt;
+      &lt;Box&gt;
+        &lt;IconButton&gt;
+          &lt;DownloadOutlinedIcon
+            sx={{ fontSize: &quot;26px&quot;, color: colors.greenAccent[500] }}
+          /&gt;
+        &lt;/IconButton&gt;
+      &lt;/Box&gt;
+    &lt;/Box&gt;
+    &lt;Box height=&quot;250px&quot; m=&quot;-20px 0 0 0&quot;&gt;
+      &lt;LineChart isDashboard /&gt;
+    &lt;/Box&gt;
+  &lt;/Box&gt;
+);
+
+export default RevenueChartCard;
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

@@ -1,0 +1,3 @@
+Path	Lines of Code
+scenes/global/Sidebar.jsx	235
+scenes/global/Topbar.jsx	50

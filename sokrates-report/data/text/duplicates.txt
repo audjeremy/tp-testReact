@@ -1,0 +1,216 @@
+duplicated block id: 1
+size: 29 cleaned lines of code
+in 2 files:
+ - components/GeographyChart.jsx (12:40)
+ - components/PieChart.jsx (11:39)
+
+duplicated block id: 2
+size: 28 cleaned lines of code
+in 2 files:
+ - components/LineChart.jsx (12:39)
+ - components/PieChart.jsx (11:38)
+
+duplicated block id: 3
+size: 28 cleaned lines of code
+in 2 files:
+ - components/GeographyChart.jsx (12:39)
+ - components/LineChart.jsx (12:39)
+
+duplicated block id: 4
+size: 27 cleaned lines of code
+in 2 files:
+ - scenes/contacts/index.jsx (61:87)
+ - scenes/invoices/index.jsx (48:74)
+
+duplicated block id: 5
+size: 27 cleaned lines of code
+in 2 files:
+ - components/BarChart.jsx (15:41)
+ - components/GeographyChart.jsx (14:40)
+
+duplicated block id: 6
+size: 27 cleaned lines of code
+in 2 files:
+ - components/BarChart.jsx (15:41)
+ - components/PieChart.jsx (13:39)
+
+duplicated block id: 7
+size: 26 cleaned lines of code
+in 2 files:
+ - components/BarChart.jsx (15:40)
+ - components/LineChart.jsx (14:39)
+
+duplicated block id: 8
+size: 24 cleaned lines of code
+in 2 files:
+ - scenes/contacts/index.jsx (15:38)
+ - scenes/team/index.jsx (19:42)
+
+duplicated block id: 9
+size: 12 cleaned lines of code
+in 2 files:
+ - scenes/contacts/index.jsx (27:38)
+ - scenes/invoices/index.jsx (17:28)
+
+duplicated block id: 10
+size: 12 cleaned lines of code
+in 2 files:
+ - scenes/invoices/index.jsx (17:28)
+ - scenes/team/index.jsx (31:42)
+
+duplicated block id: 11
+size: 10 cleaned lines of code
+in 2 files:
+ - theme.js (134:143)
+ - theme.js (151:160)
+
+duplicated block id: 12
+size: 9 cleaned lines of code
+in 2 files:
+ - scenes/invoices/index.jsx (10:18)
+ - scenes/team/index.jsx (17:25)
+
+duplicated block id: 13
+size: 8 cleaned lines of code
+in 2 files:
+ - components/LineChart.jsx (108:115)
+ - components/PieChart.jsx (100:107)
+
+duplicated block id: 14
+size: 8 cleaned lines of code
+in 2 files:
+ - components/BarChart.jsx (55:62)
+ - components/PieChart.jsx (66:73)
+
+duplicated block id: 15
+size: 7 cleaned lines of code
+in 2 files:
+ - scenes/faq/index.jsx (36:45)
+ - scenes/faq/index.jsx (49:58)
+
+duplicated block id: 16
+size: 7 cleaned lines of code
+in 2 files:
+ - scenes/faq/index.jsx (23:32)
+ - scenes/faq/index.jsx (62:71)
+
+duplicated block id: 17
+size: 7 cleaned lines of code
+in 2 files:
+ - scenes/faq/index.jsx (36:45)
+ - scenes/faq/index.jsx (62:71)
+
+duplicated block id: 18
+size: 7 cleaned lines of code
+in 2 files:
+ - scenes/faq/index.jsx (49:58)
+ - scenes/faq/index.jsx (62:71)
+
+duplicated block id: 19
+size: 7 cleaned lines of code
+in 2 files:
+ - scenes/contacts/index.jsx (15:21)
+ - scenes/invoices/index.jsx (12:18)
+
+duplicated block id: 20
+size: 7 cleaned lines of code
+in 2 files:
+ - scenes/faq/index.jsx (23:32)
+ - scenes/faq/index.jsx (49:58)
+
+duplicated block id: 21
+size: 7 cleaned lines of code
+in 2 files:
+ - scenes/faq/index.jsx (23:32)
+ - scenes/faq/index.jsx (36:45)
+
+duplicated block id: 22
+size: 6 cleaned lines of code
+in 2 files:
+ - data/contactsData.js (35:41)
+ - data/teamData.js (26:32)
+
+duplicated block id: 23
+size: 6 cleaned lines of code
+in 2 files:
+ - data/contactsData.js (90:96)
+ - data/teamData.js (66:72)
+
+duplicated block id: 24
+size: 6 cleaned lines of code
+in 2 files:
+ - components/BarChart.jsx (116:121)
+ - components/LineChart.jsx (107:112)
+
+duplicated block id: 25
+size: 6 cleaned lines of code
+in 2 files:
+ - data/transactionsData.js (14:20)
+ - data/transactionsData.js (32:38)
+
+duplicated block id: 26
+size: 6 cleaned lines of code
+in 2 files:
+ - scenes/form/index.jsx (91:96)
+ - scenes/form/index.jsx (104:109)
+
+duplicated block id: 27
+size: 6 cleaned lines of code
+in 2 files:
+ - data/contactsData.js (79:85)
+ - data/teamData.js (58:64)
+
+duplicated block id: 28
+size: 6 cleaned lines of code
+in 2 files:
+ - scenes/form/index.jsx (52:57)
+ - scenes/form/index.jsx (65:70)
+
+duplicated block id: 29
+size: 6 cleaned lines of code
+in 2 files:
+ - scenes/form/index.jsx (78:83)
+ - scenes/form/index.jsx (104:109)
+
+duplicated block id: 30
+size: 6 cleaned lines of code
+in 2 files:
+ - data/contactsData.js (13:19)
+ - data/teamData.js (10:16)
+
+duplicated block id: 31
+size: 6 cleaned lines of code
+in 2 files:
+ - data/contactsData.js (46:52)
+ - data/teamData.js (34:40)
+
+duplicated block id: 32
+size: 6 cleaned lines of code
+in 2 files:
+ - data/contactsData.js (24:30)
+ - data/teamData.js (18:24)
+
+duplicated block id: 33
+size: 6 cleaned lines of code
+in 2 files:
+ - data/transactionsData.js (8:14)
+ - data/transactionsData.js (44:50)
+
+duplicated block id: 34
+size: 6 cleaned lines of code
+in 2 files:
+ - data/contactsData.js (68:74)
+ - data/teamData.js (50:56)
+
+duplicated block id: 35
+size: 6 cleaned lines of code
+in 2 files:
+ - scenes/form/index.jsx (78:83)
+ - scenes/form/index.jsx (91:96)
+
+duplicated block id: 36
+size: 6 cleaned lines of code
+in 2 files:
+ - data/contactsData.js (57:63)
+ - data/teamData.js (42:48)
+

@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>export function sortByKey()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">export function sortByKey()</h3>
+<p style="margin-top: 4px">in <i>utils/filters.js [6:26]</i></p>
+<ul>
+    <li><b>18</b> lines of code</li>
+    <li><b>12</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="js">
+export function sortByKey(items, key, dir = 'asc') {
+  if (!Array.isArray(items)) return []
+  if (!items.length) return []
+  if (typeof key !== 'string' || !key) return [...items] // renvoie une copie telle quelle
+
+  const sign = dir === 'desc' ? -1 : 1
+  // on copie pour ne pas muter l&rsquo;original
+  const copy = [...items]
+  copy.sort((a, b) =&gt; {
+    const va = a?.[key]
+    const vb = b?.[key]
+    // si la cl&eacute; n'existe pas, on consid&egrave;re &eacute;galit&eacute;
+    if (va == null &amp;&amp; vb == null) return 0
+    if (va == null) return 1  // valeurs nulles en bas
+    if (vb == null) return -1
+    if (va &lt; vb) return -1 * sign
+    if (va &gt; vb) return 1 * sign
+    return 0
+  })
+  return copy
+}
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

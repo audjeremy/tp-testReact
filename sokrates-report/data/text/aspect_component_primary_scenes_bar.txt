@@ -1,0 +1,2 @@
+Path	Lines of Code
+scenes/bar/index.jsx	14
