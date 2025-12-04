@@ -36,5 +36,11 @@ jobs:
 
       - name: Run Cypress e2e tests
         run: |
-          # Lance les tests Cypress E2E
-          npm run e2e:run
+            # Démarre le serveur CRA en arrière-plan
+            npm start &
+            # Laisse le temps au serveur de booter
+            sleep 40
+            # Lance ensuite les tests Cypress E2E
+            npm run e2e:run
+        env:
+            CI: true
